@@ -1,2 +1,2 @@
 # CSI_II
-  Repository for my Java compsci class at Muhlenberg College
+  Repository for my Java computer science class at Muhlenberg College
