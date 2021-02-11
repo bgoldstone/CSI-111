@@ -35,8 +35,7 @@ public class PayrollCalculator {
         else {
             pay = (hours - 40) * (1.5 * rate) + 40 * rate;
         }
-
         //displays results (Gross Pay)
-        System.out.println("You earned $" + pay);
+        System.out.println("You earned $" + String.format("%.2f", pay));
     }
 }
