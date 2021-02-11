@@ -19,7 +19,7 @@ public class PayrollCalculator {
         double pay; //gross pay
 
         //display prompt and gets input from user
-        System.out.println("How many hours did you work?");
+        System.out.print("How many hours did you work? ");
         hours = keyboard.nextDouble();
         //calculations
         if(hours <= 40){
