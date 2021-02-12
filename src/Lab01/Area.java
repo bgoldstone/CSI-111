@@ -14,9 +14,7 @@ public class Area {
         Scanner keyboard = new Scanner(System.in);
 
         //Variable declarations
-        double length;
-        double width;
-        double area;
+        double length, width, area;
 
         //Program Header
         System.out.println("Area Calculator\nAuthor: Ben Goldstone\n");
