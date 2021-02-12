@@ -14,17 +14,17 @@ public class Area {
         Scanner keyboard = new Scanner(System.in);
 
         //Variable declarations
-        double length, width, area;
+        int length, width, area;
 
         //Program Header
         System.out.println("Area Calculator\nAuthor: Ben Goldstone\n");
 
         //Gets length and width from the User
         System.out.print("What is the length of your rectangle (or square)? ");
-        length = keyboard.nextDouble();
+        length = keyboard.nextInt();
 
         System.out.print("\nWhat is the width of your rectangle (or square)? ");
-        width = keyboard.nextDouble();
+        width = keyboard.nextInt();
 
         //Calculates area
         area = width * length;
