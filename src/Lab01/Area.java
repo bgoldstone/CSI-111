@@ -1,7 +1,7 @@
 package Lab01;
 /*
- * author: Ben Goldstone
- * date: 2/11/2021
+ * Author: Ben Goldstone
+ * Date: 2/11/2021
  * Instructor: Professor Joseph Helsing
  * Description: Calculates area for given length and width
  */
