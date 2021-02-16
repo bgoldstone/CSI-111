@@ -1,10 +1,12 @@
 package Lab02;
+
 import java.util.Scanner;
+
 /*
  * Author: Ben Goldstone
  * Date: 2/19/2021
  * Instructor: Professor Joseph Helsing
- * Description:
+ * Description: A program that Calculates Volume for given object
  */
 public class Volume {
     public static void main(String[] args) {
@@ -23,24 +25,24 @@ public class Volume {
         choice = choice.toLowerCase();
 
         //determines what they are calculating the volume of and calculates volume
-        if(choice.equals("sphere")){
-            System.out.println("What is the radius of this " + choice +"? ");
+        if (choice.equals("sphere")) {
+            System.out.println("What is the radius of this " + choice + "? ");
             radius = scan.nextInt();
-            volume = PI*Math.pow(radius,3)*4/3;
-        }else if(choice.equals("cylinder")){
-            System.out.println("What is the radius of this " + choice +"? ");
+            volume = PI * Math.pow(radius, 3) * 4 / 3;
+        } else if (choice.equals("cylinder")) {
+            System.out.println("What is the radius of this " + choice + "? ");
             radius = scan.nextInt();
-            System.out.println("What is the height of this " + choice +"? ");
+            System.out.println("What is the height of this " + choice + "? ");
             int height = scan.nextInt();
-            volume = PI*Math.pow(radius,2)*height;
-        } else if(choice.equals("cone")){
-            System.out.println("What is the radius of this " + choice +"? ");
+            volume = PI * Math.pow(radius, 2) * height;
+        } else if (choice.equals("cone")) {
+            System.out.println("What is the radius of this " + choice + "? ");
             radius = scan.nextInt();
-            System.out.println("What is the height of this " + choice +"? ");
+            System.out.println("What is the height of this " + choice + "? ");
             int height = scan.nextInt();
-            volume = PI*Math.pow(radius,2)*height/3;
-        //error checks input
-        }else{
+            volume = PI * Math.pow(radius, 2) * height / 3;
+            //error checks input
+        } else {
             System.out.println("Invalid Choice");
         }
         //provides answer
