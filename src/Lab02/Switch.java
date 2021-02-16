@@ -1,6 +1,7 @@
 package Lab02;
 
 //import Scanner Library
+
 import java.util.Scanner;
 
 /*
@@ -29,7 +30,7 @@ public class Switch {
 
         //Scans Choice
         choice = scan.next().charAt(0);
-        switch (choice){
+        switch (choice) {
             case 'A':
                 System.out.println("That is incorrect! Neptune is the planted farthest away from the sun.");
                 break;
