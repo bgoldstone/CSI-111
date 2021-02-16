@@ -8,7 +8,7 @@ package Lab02;
  */
 //Math does not need to be imported
 //import Math;
-//missing class keywoard
+//missing class keyword
 public class Errors {
     //missing args parameter and static
     public static void main(String[] args) {
