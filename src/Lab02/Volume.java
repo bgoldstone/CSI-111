@@ -24,21 +24,21 @@ public class Volume {
 
         //determines what they are calculating the volume of and calculates volume
         if(choice.equals("sphere")){
-            System.out.println("What is the radius of this " + choice +" ? ");
+            System.out.println("What is the radius of this " + choice +"? ");
             radius = scan.nextInt();
-            volume = (4/3)*PI*Math.pow(radius,3);
+            volume = PI*Math.pow(radius,3)*4/3;
         }else if(choice.equals("cylinder")){
-            System.out.println("What is the radius of this " + choice +" ? ");
+            System.out.println("What is the radius of this " + choice +"? ");
             radius = scan.nextInt();
-            System.out.println("What is the height of this " + choice +" ? ");
+            System.out.println("What is the height of this " + choice +"? ");
             int height = scan.nextInt();
             volume = PI*Math.pow(radius,2)*height;
         } else if(choice.equals("cone")){
-            System.out.println("What is the radius of this " + choice +" ? ");
+            System.out.println("What is the radius of this " + choice +"? ");
             radius = scan.nextInt();
-            System.out.println("What is the height of this " + choice +" ? ");
+            System.out.println("What is the height of this " + choice +"? ");
             int height = scan.nextInt();
-            volume = PI*Math.pow(radius,2)*(height/3);
+            volume = PI*Math.pow(radius,2)*height/3;
         //error checks input
         }else{
             System.out.println("Invalid Choice");
