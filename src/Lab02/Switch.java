@@ -31,19 +31,13 @@ public class Switch {
         choice = scan.next().charAt(0);
         switch (choice) {
             case 'A':
-                System.out.println("That is incorrect! Neptune is the planted farthest away from the sun.");
-                break;
             case 'B':
+            case 'D':
+            case 'E':
                 System.out.println("That is incorrect! Neptune is the planted farthest away from the sun.");
                 break;
             case 'C':
                 System.out.println("That is correct! Neptune is the planted farthest away from the sun.");
-                break;
-            case 'D':
-                System.out.println("That is incorrect! Neptune is the planted farthest away from the sun.");
-                break;
-            case 'E':
-                System.out.println("That is incorrect! Neptune is the planted farthest away from the sun.");
                 break;
             default:
                 System.out.println("That is not a valid choice.");
