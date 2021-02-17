@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Author: Ben Goldstone
  * Date: 2/19/2021
  * Instructor: Professor Joseph Helsing
- * Description: A program that quizes you on the the farthest planet from the sun
+ * Description: A program that quizzes you on the the farthest planet from the sun
  */
 public class Switch {
     public static void main(String[] args) {
