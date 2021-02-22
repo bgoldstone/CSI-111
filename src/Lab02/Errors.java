@@ -1,5 +1,9 @@
 package Lab02;
 
+//import Libraries
+
+import java.lang.Math;
+
 /*
  * Author: Ben Goldstone
  * Date: 2/19/2021

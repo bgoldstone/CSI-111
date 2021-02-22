@@ -1,7 +1,9 @@
 package Lab02;
 
-//import Scanner Libraries
+//import Libraries
+
 import java.util.Scanner;
+import java.lang.Math;
 
 /*
  * Author: Ben Goldstone
