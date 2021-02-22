@@ -22,7 +22,7 @@ public class Grades {
         int count = 1; //counts how many grades to take average of
         String choice = ""; //stores y or conditional value
         double grade = 0.0; //stores currently entered grade
-        boolean continueLoop = false; //determines if loop continues
+        boolean continueLoop; //determines if loop continues
         do {
             continueLoop = false;
             System.out.println("Enter grade #" + count + ": ");
@@ -35,7 +35,11 @@ public class Grades {
             }
             System.out.println("Do you have more grades to enter? (y/n)");
             choice = scan.nextLine();
-            if (choice.toLowerCase().charAt(0) == 'y') continueLoop = true;
+
+            if (choice.toLowerCase().charAt(0) == 'y') {
+                continueLoop = true;
+            }
+
             if (continueLoop) count++;
         } while (continueLoop);
         average /= count;
