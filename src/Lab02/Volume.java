@@ -31,7 +31,7 @@ public class Volume {
         if (choice.equals("sphere")) {
             System.out.println("What is the radius of this " + choice + "? ");
             radius = scan.nextInt();
-            volume = PI * Math.pow(radius, 3) * 4 / 3;
+            volume = (4.0 /3) * PI * Math.pow(radius, 3);
         } else if (choice.equals("cylinder")) {
             System.out.println("What is the radius of this " + choice + "? ");
             radius = scan.nextInt();
