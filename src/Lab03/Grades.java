@@ -5,7 +5,6 @@ package Lab03;
  * Instructor: Professor Joseph Helsing
  * Description: A program that calculates a floating point average given a set of grades
  */
-//Ask Professor about how 90 from 105 100 95 75 -5
 
 
 //import Scanner for User Input
@@ -20,7 +19,7 @@ public class Grades {
         //declaring/initializing variables
         double average = 0.0; //stores addition and average of all variables
         int count = 1; //counts how many grades to take average of
-        String choice = ""; //stores y or conditional value
+        char choice; //stores y or conditional value
         double grade = 0.0; //stores currently entered grade
         boolean continueLoop; //determines if loop continues
         do {
@@ -35,9 +34,9 @@ public class Grades {
             }
             average += grade;
             System.out.println("Do you have more grades to enter? (y/n)");
-            choice = scan.nextLine();
+            choice = scan.nextLine().charAt(0);
 
-            if (choice.toLowerCase().charAt(0) == 'y') {
+            if (choice == 'y' || choice == 'Y') {
                 continueLoop = true;
             }
 
