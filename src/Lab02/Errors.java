@@ -19,7 +19,7 @@ public class Errors {
         //missing semicolon
         System.out.println("This code contains multiple errors.");
         //uses a " ' instead of ""
-        System.out.print("These need to be fixed before you submit it.");
+        System.out.println("These need to be fixed before you submit it.");
         //missing uses pow method but does not define Math class
         System.out.println(Math.pow(2, 4));
         //spelled out as our
