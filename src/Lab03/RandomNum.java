@@ -9,18 +9,17 @@ public class RandomNum {
         final int RANGE = 10;
 
         //minimum for random integer set #1
-        final int RANDINT1MIN = 1;
+        final int MIN = 1;
 
         //minimum for random integer set #2
-        final int RANDINT2MIN = 11;
+        final int MAX = 20;
 
         //generates random integer minimum for set #1
 
-        int randInt1Sum = randInt(RANGE,RANDINT1MIN);
-        int randInt2Sum = randInt(RANGE,RANDINT2MIN);
+        int randIntSum = randInt(RANGE,MIN, MAX);
 
         //print results
-        System.out.println("\n\nRandom Number Set #1 Sum: " + randInt1Sum + "\nRandom Number Set #2 Sum: " + randInt2Sum);
+        System.out.println("\n\nRandom Number SetSum: " + randIntSum);
     }
 
     /**
@@ -29,16 +28,18 @@ public class RandomNum {
      * @param minimum determines starting value
      * @return sum returns sum of minimum value plus the even numbers up to the range.
      */
-    public static int randInt(int range, int minimum){
+    public static int randInt(int range, int minimum, int maximum){
         Random rand = new Random();
-        int randomInteger = (rand.nextInt(range) + minimum);
+        int randomMinimum = (rand.nextInt(range) + minimum);
+        int randomMaximum = (maximum - rand.nextInt(range));
         int sum = 0;
-        System.out.println("\nrandInt: " + randomInteger);
+        System.out.println("\nRandom Minimum: " + randomMinimum);
+        System.out.println("Random Maximum: " + randomMaximum);
         System.out.print("\nNum Set \n[");
-        if (randomInteger % 2 != 0) {
-            randomInteger++;
+        if (randomMinimum % 2 != 0) {
+            randomMinimum++;
         }
-        for (int i = randomInteger; i <= (minimum + range); i += 2) {
+        for (int i = randomMinimum; i <= randomMaximum; i += 2) {
             System.out.print(i + ", ");
             sum += i;
         }
