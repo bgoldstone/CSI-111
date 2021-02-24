@@ -6,24 +6,24 @@ import java.util.Scanner;
 public class Cylinder {
     public static void main(String[] args) {
         //declares variables
-        double h, r, base_area, side_area; //height, length of radius, area of base, area of side
+        double height, radius, base_area, side_area; //height, length of radius, area of base, area of side
         //declares Scanner
         Scanner scan = new Scanner(System.in);
 
         //gets radius of right cylinder from use
         System.out.println("Enter the length of the radius for the right cylinder in feet: ");
-        r = scan.nextDouble();
+        radius = scan.nextDouble();
 
         //gets height of right cylinder from use
         System.out.println("Enter the height of the right cylinder in feet: ");
-        h = scan.nextInt();
+        height = scan.nextInt();
 
         //calculates base area given radius of right cylinder
-        base_area = calcBaseArea(r);
+        base_area = calcBaseArea(radius);
         System.out.println("Base surface area of the right cylinder is " + base_area + " square feet.");
 
         //calculates side area given height and radius of right cylinder
-        side_area = calcSideArea(h, r);
+        side_area = calcSideArea(height, radius);
         System.out.println("Side surface area of the right cylinder is " + side_area + " square feet.");
 
         //prints surface area given area of base and area of side
