@@ -20,12 +20,11 @@ public class Cylinder {
 
         //calculates base area given radius of right cylinder
         base_area = calcBaseArea(radius);
-        System.out.println("Base surface area of the right cylinder is " + base_area + " square feet.");
+        System.out.printf("Base surface area of the right cylinder is " + "%.3f" + " square feet.\n", base_area);
 
         //calculates side area given height and radius of right cylinder
         side_area = calcSideArea(height, radius);
-        System.out.println("Side surface area of the right cylinder is " + side_area + " square feet.");
-
+        System.out.printf("Side surface area of the right cylinder is " + "%.3f" + " square feet.\n", side_area);
         //prints surface area given area of base and area of side
         prntSurfArea(base_area, side_area);
     }
@@ -58,6 +57,6 @@ public class Cylinder {
      */
     //prints surface area given area of base and area of side
     public static void prntSurfArea(double baseArea, double sideArea) {
-        System.out.println("The total surface area of the right cylinder is " + (baseArea + sideArea) + " square feet.");
+        System.out.printf("The total surface area of the right cylinder is " + "%.3f" + " square feet.",(baseArea + sideArea));
     }
 }

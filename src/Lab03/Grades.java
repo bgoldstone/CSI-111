@@ -28,14 +28,13 @@ public class Grades {
             grade = scan.nextDouble();
             scan.nextLine();
             if (grade < 0 || grade > 100) {
-                System.out.print("Invalid Grade, ");
+                System.err.print("Invalid Grade, ");
                 continueLoop = true;
                 continue;
             }
             average += grade;
             System.out.println("Do you have more grades to enter? (y/n)");
             choice = scan.nextLine().charAt(0);
-
             if (choice == 'y' || choice == 'Y') {
                 continueLoop = true;
             }
