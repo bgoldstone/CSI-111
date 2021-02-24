@@ -1,4 +1,5 @@
 package Lab03;
+
 import java.util.Random;
 
 public class RandomNum {
@@ -8,27 +9,25 @@ public class RandomNum {
         //range of numbers
         final int RANGE = 10;
 
-        //minimum for random integer set #1
+        //minimum for random integer set
         final int MIN = 1;
 
-        //minimum for random integer set #2
+        //maximum for random integer set
         final int MAX = 20;
 
-        //generates random integer minimum for set #1
-
-        int randIntSum = randInt(RANGE,MIN, MAX);
-
-        //print results
-        System.out.println("\n\nRandom Number SetSum: " + randIntSum);
+        //generates random integers and finds sum of even numbers and prints results
+        System.out.println("\n\nRandom Number Set Sum: " + evenRandIntSum(RANGE, MIN, MAX));
     }
 
     /**
-     * Generates a list of random integers and adds them all together
-     * @param range determines range of numbers.
-     * @param minimum determines starting value
-     * @return sum returns sum of minimum value plus the even numbers up to the range.
+     * Generates a list of random integers between a given range and adds all the even numbers in that range up
+     *
+     * @param range   determines range of numbers.
+     * @param minimum determines starting value.
+     * @param maximum determines ending value.
+     * @return returns sum of the values between the maximum and the maximum.
      */
-    public static int randInt(int range, int minimum, int maximum){
+    public static int evenRandIntSum(int range, int minimum, int maximum) {
         Random rand = new Random();
         int randomMinimum = (rand.nextInt(range) + minimum);
         int randomMaximum = (maximum - rand.nextInt(range));
@@ -40,10 +39,14 @@ public class RandomNum {
             randomMinimum++;
         }
         for (int i = randomMinimum; i <= randomMaximum; i += 2) {
-            System.out.print(i + ", ");
+            if(i == randomMaximum || i == randomMaximum-1) {
+                System.out.print(i);
+            }else {
+                System.out.print(i + ", ");
+            }
             sum += i;
         }
-            System.out.println("]");
+        System.out.println("]");
         return sum;
     }
 }
