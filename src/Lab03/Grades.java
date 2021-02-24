@@ -28,11 +28,12 @@ public class Grades {
             System.out.println("Enter grade #" + count + ": ");
             grade = scan.nextDouble();
             scan.nextLine();
-            average += grade;
-            if (grade < 0) {
+            if (grade < 0 || grade > 100) {
+                System.out.print("Invalid Grade, ");
                 continueLoop = true;
                 continue;
             }
+            average += grade;
             System.out.println("Do you have more grades to enter? (y/n)");
             choice = scan.nextLine();
 
