@@ -35,10 +35,10 @@ public class RandomNum {
         int sum = 0;
         System.out.println("\nrandInt: " + randomInteger);
         System.out.print("\nNum Set \n[");
+        if (randomInteger % 2 != 0) {
+            randomInteger++;
+        }
         for (int i = randomInteger; i <= (minimum + range); i += 2) {
-            if (i % 2 != 0) {
-                i++;
-            }
             System.out.print(i + ", ");
             sum += i;
         }
