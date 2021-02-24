@@ -30,16 +30,32 @@ public class Cylinder {
         prntSurfArea(base_area, side_area);
     }
 
-    //calculates base area given radius of right cylinder
-    public static double calcBaseArea(double r) {
-        return 2 * Math.PI * Math.pow(r, 2);
+    /**
+     * Takes in a radius and returns the Surface area of the base of a right cylinder.
+     * @param radius takes the radius as a parameter
+     * @return returns the base area of a right cylinder
+     */
+    public static double calcBaseArea(double radius) {
+        return 2 * Math.PI * Math.pow(radius, 2);
     }
 
     //calculates side area given height and radius of right cylinder
-    public static double calcSideArea(double h, double r) {
-        return h * (2 * Math.PI * r);
+
+    /**
+     * Takes in a radius and returns the surface area of the side of a right cylinder.
+     * @param height takes in height of a right cylinder
+     * @param radius takes in the radius of a right cylinder
+     * @return area of the side surface area of a right cylinder
+     */
+    public static double calcSideArea(double height, double radius) {
+        return height * (2 * Math.PI * radius);
     }
 
+    /**
+     * Takes in base area and side area of a right cylinder and prints total surface area of a right cylinder
+     * @param baseArea takes in a base area of a right cylinder
+     * @param sideArea takes in a side area of a right cylinder
+     */
     //prints surface area given area of base and area of side
     public static void prntSurfArea(double baseArea, double sideArea) {
         System.out.println("The total surface area of the right cylinder is " + (baseArea + sideArea) + " square feet.");
