@@ -20,7 +20,7 @@ public class Grades {
         double average = 0.0; //stores addition and average of all variables
         int count = 1; //counts how many grades to take average of
         char choice; //stores y or conditional value
-        double grade = 0.0; //stores currently entered grade
+        double grade; //stores currently entered grade
         boolean continueLoop; //determines if loop continues
         do {
             continueLoop = false;
