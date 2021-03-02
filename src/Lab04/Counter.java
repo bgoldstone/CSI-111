@@ -1,11 +1,25 @@
 package Lab04;
+/*
+ * Author: Ben Goldstone
+ * Date: 3/5/2021
+ * Instructor: Professor Joseph Helsing
+ * Description: A program that counts the number of
+ * letters, digits, whitespaces, and special characters in a string
+ */
 
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Counter {
     public static void main(String[] args) {
+
+        //gets message
         String message = getInput();
-        countAndPrint(message);
+        //gets count
+        int[] stringCount = Arrays.copyOf(countString(message), 4);
+        //prints count
+        printCount(stringCount);
     }
 
     /**
@@ -15,14 +29,16 @@ public class Counter {
      */
     public static String getInput() {
         System.out.println("Please enter a String to be counted: ");
-        Scanner input = new Scanner(System.in);
-        return input.nextLine();
+        Scanner scan = new Scanner(System.in);
+        return scan.nextLine();
     }
 
     /**
      * Counts the values of letters, digits, whitespaces, and special characters
+     *
+     * @return
      */
-    public static void countAndPrint(String msg) {
+    public static int[] countString(String msg) {
         /*
         initializes counting array
         Position    Type
@@ -32,7 +48,7 @@ public class Counter {
         3           Special Characters
          */
 
-        int[] count = {0,0,0,0};
+        int[] count = {0, 0, 0, 0};
 
         for (int i = 0; i < msg.length(); i++) {
             if (Character.isAlphabetic(msg.charAt(i))) {
@@ -47,10 +63,14 @@ public class Counter {
 
 
         }
-        System.out.println("Number of Letters: " + count[0]);
-        System.out.println("Number of Digits: " + count[1]);
-        System.out.println("Number of Whitespaces: " + count[2]);
-        System.out.println("Number of Special Characters: " + count[3]);
+        return count;
+    }
+
+    public static void printCount(int[] counts) {
+        System.out.println("Number of Letters: " + counts[0]);
+        System.out.println("Number of Digits: " + counts[1]);
+        System.out.println("Number of Whitespaces: " + counts[2]);
+        System.out.println("Number of Special Characters: " + counts[3]);
     }
 
 }
