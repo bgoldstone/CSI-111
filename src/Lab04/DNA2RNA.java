@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class DNA2RNA {
     public static void main(String[] args) {
 
-        //Gets DNA from User
+        //Gets DNA from User and checks input
         String DNA = getDNA();
 
         //Converts DNA to RNA
