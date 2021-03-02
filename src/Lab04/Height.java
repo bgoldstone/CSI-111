@@ -17,7 +17,7 @@ public class Height {
     public static void main(String[] args) {
 
         //gets array of heights and puts it into a local array
-        int[] heights = Arrays.copyOf(getArray(), 8);
+        int[] heights = getArray();
         //prints and calculates average
         System.out.printf("The average of the set %s is %.3f", Arrays.toString(heights), getAvg(heights));
     }
@@ -25,7 +25,7 @@ public class Height {
     /**
      * Gets array of heights
      *
-     * @return array of height
+     * @return integer array of heights
      */
     public static int[] getArray() {
 
@@ -40,7 +40,7 @@ public class Height {
             height[i] = scan.nextInt();
             scan.nextLine();
         }
-        return height;
+        return Arrays.copyOf(height,height.length);
     }
 
     /**

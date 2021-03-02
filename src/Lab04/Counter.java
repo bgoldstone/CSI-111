@@ -17,7 +17,7 @@ public class Counter {
         //gets message
         String message = getInput();
         //gets count
-        int[] stringCount = Arrays.copyOf(countString(message), 4);
+        int[] stringCount = countString(message);
         //prints count
         printCount(stringCount);
     }
@@ -35,7 +35,7 @@ public class Counter {
 
     /**
      * Counts the values of letters, digits, whitespaces, and special characters
-     *
+     * @param msg takes a message to count the numbver of letters, digits, whitespaces, and special characters
      * @return count of the given String in an integer array
      */
     public static int[] countString(String msg) {
@@ -63,9 +63,13 @@ public class Counter {
 
 
         }
-        return count;
+        return Arrays.copyOf(count,count.length);
     }
 
+    /**
+     * Prints out Results of counts of letters, digits, whitespaces, special character
+     * @param counts array of counted numbers of letters, digits, whitespaces, and special characters
+     */
     public static void printCount(int[] counts) {
         System.out.println("Number of Letters: " + counts[0]);
         System.out.println("Number of Digits: " + counts[1]);
