@@ -35,7 +35,7 @@ public class DNA2RNA {
         boolean flag;
         do {
             flag = false;
-            System.out.println("Please enter a series of DNA to be converted to RNA");
+            System.out.println("Please enter a series of DNA to be converted to RNA:");
 
             //takes DNA as input, converts to upper case and removes whitespaces
             dna = scan.nextLine().toUpperCase().strip();
@@ -44,6 +44,8 @@ public class DNA2RNA {
             for (char c : dna.toCharArray()) {
                 if (c != 'A' && c != 'C' && c != 'G' && c != 'T') {
                     flag = true;
+                    System.out.print("Invalid Characters, ");
+                    break;
                 }
             }
         } while (flag);

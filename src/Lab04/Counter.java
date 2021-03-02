@@ -36,7 +36,7 @@ public class Counter {
     /**
      * Counts the values of letters, digits, whitespaces, and special characters
      *
-     * @return
+     * @return count of the given String in an integer array
      */
     public static int[] countString(String msg) {
         /*
