@@ -17,7 +17,7 @@ public class DNA2RNA {
     public static void main(String[] args) {
 
         //Gets DNA from User and checks input
-        String DNA = getDNA();
+        String DNA = verifyDNA(getDNA());
 
         //Converts DNA to RNA
         String RNA = toRNA(DNA);
@@ -32,23 +32,11 @@ public class DNA2RNA {
     public static String getDNA() {
         Scanner scan = new Scanner(System.in);
         String dna;
-        boolean flag;
-        do {
-            flag = false;
             System.out.println("Please enter a series of DNA to be converted to RNA:");
 
             //takes DNA as input, converts to upper case and removes whitespaces
             dna = scan.nextLine().toUpperCase().strip();
 
-            //checks to see if there are any characters besides "A", "C", "G", or "T"
-            for (char c : dna.toCharArray()) {
-                if (c != 'A' && c != 'C' && c != 'G' && c != 'T') {
-                    flag = true;
-                    System.out.print("Invalid Characters, ");
-                    break;
-                }
-            }
-        } while (flag);
         return dna;
     }
 
@@ -66,6 +54,29 @@ public class DNA2RNA {
         }
         return rna.toString();
 
+    }
+
+    /**
+     * A method to test that the DNA has the right characters.
+     * If fails, prompts user for DNA String again
+     * @param dna String of DNA
+     * @return valid DNA
+     */
+    public static String verifyDNA(String dna){
+        boolean flag;
+        do {
+            flag = false;
+            for (char c : dna.toCharArray()) {
+                if (c != 'A' && c != 'C' && c != 'G' && c != 'T') {
+                    flag = true;
+                    System.out.print("Invalid Characters, ");
+                    dna = getDNA();
+                    break;
+                }
+
+            }
+        } while (flag);
+        return dna;
     }
 
 }
