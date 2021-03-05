@@ -7,7 +7,7 @@ package Lab04;
  * letters, digits, whitespaces, and special characters in a string
  */
 
-
+//imports libraries
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -35,8 +35,9 @@ public class Counter {
 
     /**
      * Counts the values of letters, digits, whitespaces, and special characters
-     * @param msg takes a message to count the numbver of letters, digits, whitespaces, and special characters
-     * @return count of the given String in an integer array
+     *
+     * @param msg takes a message to count the number of letters, digits, whitespaces, and special characters
+     * @return count of the given String in an integer array of size 4 including: {letters, digits, whitespaces, special characters}
      */
     public static int[] countString(String msg) {
         /*
@@ -63,11 +64,12 @@ public class Counter {
 
 
         }
-        return Arrays.copyOf(count,count.length);
+        return Arrays.copyOf(count, count.length);
     }
 
     /**
      * Prints out Results of counts of letters, digits, whitespaces, special character
+     *
      * @param counts array of counted numbers of letters, digits, whitespaces, and special characters
      */
     public static void printCount(int[] counts) {

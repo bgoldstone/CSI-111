@@ -10,7 +10,6 @@ package Lab04;
 
 
 //imports Libraries
-
 import java.util.Scanner;
 
 public class DNA2RNA {
@@ -32,10 +31,10 @@ public class DNA2RNA {
     public static String getDNA() {
         Scanner scan = new Scanner(System.in);
         String dna;
-            System.out.println("Please enter a series of DNA to be converted to RNA:");
+        System.out.println("Please enter a series of DNA to be converted to RNA:");
 
-            //takes DNA as input, converts to upper case and removes whitespaces
-            dna = scan.nextLine().toUpperCase().strip();
+        //takes DNA as input, converts to upper case and removes whitespaces
+        dna = scan.nextLine().toUpperCase().strip();
 
         return dna;
     }
@@ -59,10 +58,11 @@ public class DNA2RNA {
     /**
      * A method to test that the DNA has the right characters.
      * If fails, prompts user for DNA String again
+     *
      * @param dna String of DNA
      * @return valid DNA
      */
-    public static String verifyDNA(String dna){
+    public static String verifyDNA(String dna) {
         boolean flag;
         do {
             flag = false;
