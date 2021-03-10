@@ -1,4 +1,3 @@
-package Lab03;
 //imports Scanner
 
 import java.util.Scanner;

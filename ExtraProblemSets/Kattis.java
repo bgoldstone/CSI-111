@@ -1,4 +1,3 @@
-package ExtraProblemSets;
 import java.util.Scanner;
 
 public class Kattis {

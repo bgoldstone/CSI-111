@@ -1,4 +1,3 @@
-package Lab01;
 /*
  * Author: Ben Goldstone
  * Date: 2/11/2021

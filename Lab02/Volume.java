@@ -1,5 +1,3 @@
-package Lab02;
-
 //import Libraries
 
 import java.util.Scanner;
