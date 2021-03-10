@@ -11,12 +11,13 @@ import java.util.Arrays;
 public class Sorted {
     public static void main(String[] args) {
         char[] arrayToBeSorted = {'b', 'f', 'a', 'z', 'm', 'g'};
-        char[] sortedArray = sortCharArray(Arrays.copyOf(arrayToBeSorted, arrayToBeSorted.length));
+        String[] sortedArrayReturnValues = sortCharArray(Arrays.copyOf(arrayToBeSorted, arrayToBeSorted.length));
         System.out.println("Original Array:" + Arrays.toString(arrayToBeSorted));
-        System.out.println("Sorted Array:" + Arrays.toString(sortedArray));
+        System.out.println("Sorted Array: " + sortedArrayReturnValues[0]);
+        System.out.println("Number of iterations " + sortedArrayReturnValues[1]);
     }
 
-    public static char[] sortCharArray(char[] array) {
+    public static String[] sortCharArray(char[] array) {
         int count = 0;
         boolean flag;
         do {
@@ -40,6 +41,7 @@ public class Sorted {
                 j--;
             }
         } while (flag);
-        return array;
+        String[] returnValues = {Arrays.toString(array), String.valueOf(count)};
+        return returnValues;
     }
 }
