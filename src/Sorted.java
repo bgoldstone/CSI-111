@@ -17,6 +17,11 @@ public class Sorted {
         System.out.println("Number of iterations: " + sortedArrayReturnValues[1]);
     }
 
+    /**
+     *
+     * @param array takes array to be sorted
+     * @return String array containing: {sorted array, number of times swapped}
+     */
     public static String[] sortCharArray(char[] array) {
         int count = 0;
         boolean flag;

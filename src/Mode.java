@@ -1,4 +1,5 @@
 //imports libraries
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,8 +13,6 @@ import java.util.Scanner;
 public class Mode {
     //declares global variables/objects
     public static int[] modeArray = new int[11];
-    public static Scanner scan = new Scanner(System.in);
-    public static Random rand = new Random();
 
     /**
      * The main method of the function
@@ -21,12 +20,15 @@ public class Mode {
      * @param args any runtime arguments
      */
     public static void main(String[] args) {
-        //initializes Scanner
+        //initializes Objects
+        Scanner scan = new Scanner(System.in);
+        Random rand = new Random();
+
         //Gets the array size from the user
-        int[] arraySize = getArraySize();
+        int[] arraySize = getArraySize(scan);
         //initializes array of random numbers
-        int[][] randArray = fillArrays(new int[arraySize[0]][arraySize[1]]);
-        printResults(randArray);
+        int[][] randArray = fillArrays(new int[arraySize[0]][arraySize[1]], rand);
+        printAndSortOutput(randArray);
     }
 
     /**
@@ -34,7 +36,7 @@ public class Mode {
      *
      * @return integer array of two items: {row length, column length}
      */
-    public static int[] getArraySize() {
+    public static int[] getArraySize(Scanner scan) {
         int[] arraySize = new int[2];
         System.out.print("How many rows do you want? ");
         arraySize[0] = scan.nextInt();
@@ -51,7 +53,7 @@ public class Mode {
      * @param randArray array to fill with random numbers
      * @return filled array with random numbers
      */
-    public static int[][] fillArrays(int[][] randArray) {
+    public static int[][] fillArrays(int[][] randArray, Random rand) {
         //fills modeArray
         Arrays.fill(modeArray, 0);
         //fills randArray and modeArray
@@ -59,6 +61,7 @@ public class Mode {
             for (int col = 0; col < randArray[row].length; col++) {
                 //generates number between 0 and 10 and assigns it to Array
                 randArray[row][col] = rand.nextInt(11);
+
                 //counts number in mode array
                 modeArray[randArray[row][col]] += 1;
             }
@@ -67,11 +70,11 @@ public class Mode {
     }
 
     /**
-     * Prints out random array and mode array
+     * Prints out random array, and print/sorts mode array
      *
      * @param randArray array of random numbers
      */
-    public static void printResults(int[][] randArray) {
+    public static void printAndSortOutput(int[][] randArray) {
         //prints out random number array
         System.out.println();
         for (int row = 0; row < randArray.length; row++) {
@@ -80,27 +83,16 @@ public class Mode {
             }
             System.out.println();
         }
-
-        //creates output string
-        String[] modes = new String[11];
-
-        //Puts modes in printable format
-        for (int row = 0; row < modeArray.length; row++) {
-            if (modeArray[row] != 0) {
-                modes[row] = "The number " + row + " occurred " + modeArray[row] + " times";
+        System.out.println(Arrays.toString(modeArray));
+        //finds out the largest number of times a number appears
+        String max = Arrays.stream(modeArray).max().toString();
+        int modeValue = Integer.parseInt(max.substring(max.indexOf("[")+1,max.indexOf("]")));
+        for (int i = 0; i < modeArray.length-1; i++) {
+            if(modeArray[i] == modeValue){
+                System.out.println("The number " + i + " occurs " + modeValue + " times");
             }
         }
         //Sorts Arrays
-        int index = modes[0].indexOf(" times")-1;
-        for (int i = 0; i < modes.length; i++) {
-        /*
-        code goes here...
-         */
-        }
-        for (String mode: modes){
-            if(mode != null){
-                System.out.println(mode);
-            }
-        }
+
     }
 }
