@@ -92,7 +92,5 @@ public class Mode {
                 System.out.println("The number " + i + " occurs " + modeValue + " times");
             }
         }
-        //Sorts Arrays
-
     }
 }
