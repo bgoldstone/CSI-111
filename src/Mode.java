@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Mode {
     //declares global variables/objects
-    public static int[] modeArray = new int[11];
+    static int[] modeArray = new int[11];
 
     /**
      * The main method of the function
