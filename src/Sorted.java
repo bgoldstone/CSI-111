@@ -12,9 +12,9 @@ public class Sorted {
     public static void main(String[] args) {
         char[] arrayToBeSorted = {'b', 'f', 'a', 'z', 'm', 'g'};
         String[] sortedArrayReturnValues = sortCharArray(Arrays.copyOf(arrayToBeSorted, arrayToBeSorted.length));
-        System.out.println("Original Array:" + Arrays.toString(arrayToBeSorted));
+        System.out.println("Original Array: " + Arrays.toString(arrayToBeSorted));
         System.out.println("Sorted Array: " + sortedArrayReturnValues[0]);
-        System.out.println("Number of iterations " + sortedArrayReturnValues[1]);
+        System.out.println("Number of iterations: " + sortedArrayReturnValues[1]);
     }
 
     public static String[] sortCharArray(char[] array) {
@@ -41,7 +41,6 @@ public class Sorted {
                 j--;
             }
         } while (flag);
-        String[] returnValues = {Arrays.toString(array), String.valueOf(count)};
-        return returnValues;
+        return new String[] {Arrays.toString(array), String.valueOf(count)};
     }
 }
