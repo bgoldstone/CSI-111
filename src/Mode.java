@@ -87,7 +87,7 @@ public class Mode {
         //finds out the largest number of times a number appears
         String max = Arrays.stream(modeArray).max().toString();
         int modeValue = Integer.parseInt(max.substring(max.indexOf("[")+1,max.indexOf("]")));
-        for (int i = 0; i < modeArray.length-1; i++) {
+        for (int i = 0; i < modeArray.length; i++) {
             if(modeArray[i] == modeValue){
                 System.out.println("The number " + i + " occurs " + modeValue + " times");
             }
