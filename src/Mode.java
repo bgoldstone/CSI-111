@@ -77,15 +77,16 @@ public class Mode {
     public static void printAndSortOutput(int[][] randArray) {
         //prints out random number array
         System.out.println();
-        for (int row = 0; row < randArray.length; row++) {
-            for (int col = 0; col < randArray[row].length; col++) {
-                System.out.print(randArray[row][col] + " ");
+        for (int[] rows : randArray) {
+            for (int row : rows) {
+                System.out.print(row + " ");
             }
             System.out.println();
         }
         System.out.println(Arrays.toString(modeArray));
         //finds out the largest number of times a number appears
         String max = Arrays.stream(modeArray).max().toString();
+        //puts max into integer value
         int modeValue = Integer.parseInt(max.substring(max.indexOf("[")+1,max.indexOf("]")));
         for (int i = 0; i < modeArray.length; i++) {
             if(modeArray[i] == modeValue){
