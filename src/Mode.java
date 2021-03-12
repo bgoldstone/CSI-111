@@ -88,6 +88,7 @@ public class Mode {
         String max = Arrays.stream(modeArray).max().toString();
         //puts max into integer value
         int modeValue = Integer.parseInt(max.substring(max.indexOf("[")+1,max.indexOf("]")));
+        //if value = mode print it out
         for (int i = 0; i < modeArray.length; i++) {
             if(modeArray[i] == modeValue){
                 System.out.println("The number " + i + " occurs " + modeValue + " times");
