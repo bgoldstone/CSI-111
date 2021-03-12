@@ -10,6 +10,7 @@ import java.util.Scanner;
  * Instructor: Professor Joseph Helsing
  * A class to find the mode (how frequently numbers occur in the array). The size is provided by the user.
  */
+@SuppressWarnings("ALL")
 public class Mode {
     //declares global variables/objects
     static int[] modeArray = new int[11];
@@ -78,16 +79,14 @@ public class Mode {
         //prints out random number array
         System.out.println();
         for (int[] rows : randArray) {
-            for (int row : rows) {
-                System.out.print(row + " ");
+            for (int value : rows) {
+                System.out.print(value + " ");
             }
             System.out.println();
         }
-        System.out.println(Arrays.toString(modeArray));
+        //System.out.println(Arrays.toString(modeArray));
         //finds out the largest number of times a number appears
-        String max = Arrays.stream(modeArray).max().toString();
-        //puts max into integer value
-        int modeValue = Integer.parseInt(max.substring(max.indexOf("[")+1,max.indexOf("]")));
+        int modeValue = Arrays.stream(modeArray).max().getAsInt();
         //if value = mode print it out
         for (int i = 0; i < modeArray.length; i++) {
             if(modeArray[i] == modeValue){
