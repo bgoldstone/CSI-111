@@ -55,8 +55,6 @@ public class Mode {
      * @return filled array with random numbers
      */
     public static int[][] fillArrays(int[][] randArray, Random rand) {
-        //fills modeArray
-        Arrays.fill(modeArray, 0);
         //fills randArray and modeArray
         for (int row = 0; row < randArray.length; row++) {
             for (int col = 0; col < randArray[row].length; col++) {
