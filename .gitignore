@@ -27,5 +27,3 @@ hs_err_pid*
 *.iml
 out
 ExamOne
-src/PartA.java
-src/PartB.java
