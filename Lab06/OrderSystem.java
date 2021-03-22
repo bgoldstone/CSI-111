@@ -20,8 +20,8 @@ public class OrderSystem {
         System.out.println("\n####################");
         System.out.printf("Name: %s", product.getName());
         System.out.printf("\nUnits: %d", product.getNumberOfUnits());
-        System.out.printf("\nPrice per Unit: %.2f", product.getPrice());
-        System.out.printf("\nTotal Price: %.2f", product.getTotalCost());
+        System.out.printf("\nPrice per Unit: $%.2f", product.getPrice());
+        System.out.printf("\nTotal Price: $%.2f", product.getTotalCost());
         System.out.println("\n####################");
     }
 
