@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>70</y>
+      <w>290</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>::Warehouse
+--
+-totalNumberOfGoods: int
+--
++Warehouse(int totalNumberOfGoods): ctor
+--
++getTotalNumberOfGoods(): int
++setAddGoods(int addGoods): void
++setRemoveGoods(int removeGoods): void
+--
+Manages Inventory of Warehouse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>80</y>
+      <w>300</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>::Product
+--
+-name: String
+-numberOfUnits: int
+-price: double
+-totalCost: double
+--
++getName(): String
++setName(String name): void
++getNumberOfUnits(): int
++setNumberOfUnits(int numberOfUnits): void
++getPrice(): double
++setPrice(double price): void
++getTotalCost(): double
++setTotalCost(double totalCost): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>380</y>
+      <w>470</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>::SmartProduct
+--
+-id: int
+-name: String
+-numberOfUnits: int
+-price: double
+-totalCost: double
+--
++SmartProduct(int id, String name, int numberOfUnits, double price): ctor
+--
++getName(): String
++getNumberOfUnits(): int
++setNumberOfUnits(int numberOfUnits): void
++getPrice(): double
++setPrice(double price): void
++getTotalCost(): double
++getId(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
