@@ -5,8 +5,7 @@ public class Manager {
         Warehouse warehouse = new Warehouse(0);
         Scanner scan = new Scanner(System.in);
         int choice = 0;
-        printNumOfGoods(warehouse);
-        System.out.println();
+        System.out.println("Welcome to the Warehouse Management System!\n");
         while (choice != 4) {
             System.out.println("What would you like to do? ");
             System.out.println("1. Add Goods");
@@ -25,7 +24,8 @@ public class Manager {
                     warehouse.setRemoveGoods(scan.nextInt());
                     break;
                 case 3:
-                    printNumOfGoods(warehouse);
+                    System.out.println();
+                    System.out.printf("There is currently %d goods in the inventory", warehouse.getTotalNumberOfGoods());
                     System.out.println();
                     break;
                 case 4:
@@ -34,10 +34,9 @@ public class Manager {
                     System.out.println("Invalid Option!");
                     break;
             }
+            System.out.println();
         }
+        System.out.println("Goodbye. Thank you for using the Warehouse Management System!");
     }
 
-    private static void printNumOfGoods(Warehouse warehouse) {
-        System.out.printf("There is currently %d goods in inventory", warehouse.getTotalNumberOfGoods());
-    }
 }
