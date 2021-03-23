@@ -17,7 +17,7 @@ public class OrderSystem {
         System.out.println("Welcome to the Product Ordering System!");
         System.out.print("What is the name of the product you want to order? ");
         product.setName(scan.nextLine());
-        System.out.printf("How many units of %s do you want? ", product.getName());
+        System.out.printf("How many %s do you want? ", product.getName());
         product.setNumberOfUnits(scan.nextInt());
         product.setPrice(9.99);
 
