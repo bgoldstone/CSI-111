@@ -6,8 +6,8 @@
  */
 
 public class SmartProduct {
-    private final int id; //ID Number of the Object
-    private final String name; //name of product
+    private int id; //ID Number of the Object
+    private String name; //name of product
     private int numberOfUnits; //number of units the customer wants to order
     private double price; //price of one unit of product
     private double totalCost; //total cost of order
@@ -27,13 +27,13 @@ public class SmartProduct {
         return name;
     }
 
-    /*
+    /**
      * @param name Sets name of item
-     *
+     */
     public void setName(String name) {
         this.name = name;
     }
-    */
+
 
     /**
      * @return Gets number of units customer wants to order
@@ -63,6 +63,7 @@ public class SmartProduct {
         this.price = price;
     }
 
+
     /**
      * @return Gets total cost of customer's order
      */
@@ -70,13 +71,12 @@ public class SmartProduct {
         return totalCost;
     }
 
-    /*
+    /**
      * @param totalCost Sets total cost of customer's order
-
+     */
     public void setTotalCost(double totalCost) {
         this.totalCost = totalCost;
     }
-    */
 
     /**
      * @return Gets ID number of the product
@@ -85,12 +85,11 @@ public class SmartProduct {
         return id;
     }
 
-    /*
+    /**
      * @param id Sets ID number of the product
+     */
 
     public void setId(int id) {
         this.id = id;
     }
-
-     */
 }

@@ -22,18 +22,19 @@ public class Warehouse {
      * @param addGoods Sets number of goods to add to the inventory
      */
     public void setAddGoods(int addGoods) {
-        totalNumberOfGoods += addGoods;
+        totalNumberOfGoods += addGoods; //Updates inventory
     }
 
     /**
      * @param removeGoods Sets number of goods to remove from the inventory
      */
     public void setRemoveGoods(int removeGoods) {
+        //if trying to remove more inventory than is in inventory
         if (removeGoods > totalNumberOfGoods) {
             System.out.println("Cannot remove more goods than total number of goods!");
             System.out.printf("There is currently %d goods in inventory\n", getTotalNumberOfGoods());
             return;
         }
-        totalNumberOfGoods -= removeGoods;
+        totalNumberOfGoods -= removeGoods; //Updates inventory
     }
 }

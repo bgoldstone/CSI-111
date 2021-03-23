@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SmartOrderSystem {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        //SmartProduct smartProduct = new SmartProduct();
+        //Product product = new Product();
         /* OLD CODE
         System.out.print("What is the name of the product you want to order? ");
         smartProduct.setName(scan.nextLine());
@@ -22,10 +22,12 @@ public class SmartOrderSystem {
         System.out.print("How many products would you like to order? ");
         SmartProduct[] smartProducts = new SmartProduct[scan.nextInt()];
         System.out.println();
-        //Sets Items
+        //declares local item variables
         int id, units;
         String name;
         double price;
+
+        //Prompts each user for product information
         for (int i = 0; i < smartProducts.length; i++) {
             System.out.printf("Time for product #%d!\n", i+1);
             System.out.print("What is the unique product ID number: ");
