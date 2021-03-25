@@ -6,6 +6,7 @@ public class Manager {
         Warehouse warehouse = new Warehouse(0);
         Scanner scan = new Scanner(System.in);
         int choice = 0;
+        int goods;
 
         System.out.println("Welcome to the Warehouse Management System!\n");
         while (choice != 4) {
@@ -23,11 +24,25 @@ public class Manager {
             switch (choice) {
                 case 1:
                     System.out.print("How many goods would you like to add? ");
-                    warehouse.setAddGoods(scan.nextInt());
+                    goods = scan.nextInt();
+
+                    //checks to make sure not negative
+                    if (goods >= 0) {
+                        warehouse.setAddGoods(goods);
+                    } else {
+                        System.err.println("Cannot add negative goods to inventory!\n");
+                    }
                     break;
                 case 2:
                     System.out.print("How many goods would you like to remove? ");
-                    warehouse.setRemoveGoods(scan.nextInt());
+                    goods = scan.nextInt();
+
+                    //checks to make sure not negative
+                    if (goods >= 0) {
+                        warehouse.setRemoveGoods(goods);
+                    } else {
+                        System.err.println("Cannot remove negative goods from inventory!\n");
+                    }
                     break;
                 case 3:
                     System.out.println();
