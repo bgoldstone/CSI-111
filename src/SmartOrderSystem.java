@@ -52,7 +52,7 @@ public class SmartOrderSystem {
             System.out.printf("\nPrice per unit: $%.2f", smartProduct.getPrice());
             System.out.printf("\nTotal price for %s: $%.2f\n", smartProduct.getName().toLowerCase(), smartProduct.getTotalCost());
         }
-        System.out.printf("\nThe total cost is $%.2f\n", calcTotal(smartProducts));
+        System.out.printf("\nTotal order cost: $%.2f\n", calcTotal(smartProducts));
         System.out.println("###################################");
     }
 
