@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * @author Ben Goldstone
+ * @author Ben Goldstone (bgoldstone@muhlenberg.edu)
  * @version 3/26/21
  * Instructor: Professor Helsing
  * Description: Takes users order information including name, number of units,

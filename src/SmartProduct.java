@@ -1,5 +1,5 @@
 /**
- * @author Ben Goldstone
+ * @author Ben Goldstone (bgoldstone@muhlenberg.edu)
  * @version 3/26/21
  * Instructor: Professor Helsing
  * Description: contains the structure for a product object.

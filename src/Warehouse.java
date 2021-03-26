@@ -1,5 +1,5 @@
 /**
- * @author Ben Goldstone
+ * @author Ben Goldstone (bgoldstone@muhlenberg.edu)
  * @version 3/26/21
  * Instructor: Professor Helsing
  * Description: Structures the Object Warehouse which keeps track of number of goods
