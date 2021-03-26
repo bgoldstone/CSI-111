@@ -15,7 +15,7 @@ public class Warehouse {
     }
 
     /**
-     * Prints Total Number of Goods
+     * Prints Total number of goods
      */
     public void getTotalNumberOfGoods() {
         System.out.println();
@@ -24,37 +24,37 @@ public class Warehouse {
     }
 
     /**
-     * Sets number of goods to add to the inventory
+     * Prompts user for number of goods to add to the inventory
      */
     public void addGoods() {
-        System.out.print("How many goods would you like to add? ");
+        System.out.print("\nHow many goods would you like to add? ");
         int goodsToAdd = scan.nextInt();
 
         //checks to make sure not negative
         if (goodsToAdd >= 0) {
             totalNumberOfGoods += goodsToAdd;
         } else {
-            System.err.println("Cannot add negative goods to inventory!\n");
+            System.out.println("Cannot add negative goods to inventory!\n");
         }
     }
 
     /**
-     * Sets number of goods to remove from the inventory
+     * Prompts user for number of goods to remove from the inventory
      */
     public void removeGoods() {
         //if trying to remove more inventory than is in inventory
-        System.out.print("How many goods would you like to remove? ");
+        System.out.print("\nHow many goods would you like to remove? ");
         int goodsToRemove = scan.nextInt();
 
         //checks to make sure not negative
         if (goodsToRemove > totalNumberOfGoods) {
-            System.out.println("Cannot remove more goods than total number of goods!");
+            System.out.println("\nCannot remove more goods than total number of goods!");
             System.out.printf("There is currently %d goods in inventory\n", totalNumberOfGoods);
         } else if (goodsToRemove < 0) {
-            System.err.println("Cannot remove negative goods from inventory!\n");
+            System.out.println("\nCannot remove negative goods from inventory!");
             System.out.printf("There is currently %d goods in inventory\n", totalNumberOfGoods);
         } else {
-            totalNumberOfGoods += goodsToRemove;
+            totalNumberOfGoods -= goodsToRemove;
         }
 
     }
