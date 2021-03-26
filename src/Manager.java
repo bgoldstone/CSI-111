@@ -1,5 +1,12 @@
 import java.util.Scanner;
 
+/**
+ * @author Ben Goldstone
+ * @version 3/26/21
+ * Instructor: Professor Helsing
+ * Description: Allows a user to manage an inventory of goods in a warehouse
+ */
+
 public class Manager {
     public static void main(String[] args) {
         //Creates instances of objects and variables
