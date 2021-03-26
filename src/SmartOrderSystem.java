@@ -46,11 +46,11 @@ public class SmartOrderSystem {
         //Prints Totals
         System.out.print("\n###################################");
         for (SmartProduct smartProduct : smartProducts) {
-            System.out.printf("\nID: %d", smartProduct.getId());
-            System.out.printf("\nName: %s", smartProduct.getName());
+            System.out.printf("\nID: %d", smartProduct.getProductID());
+            System.out.printf("\nName: %s", smartProduct.getProductName());
             System.out.printf("\nUnits: %d", smartProduct.getNumberOfUnits());
-            System.out.printf("\nPrice per unit: $%.2f", smartProduct.getPrice());
-            System.out.printf("\nTotal price for %s: $%.2f\n", smartProduct.getName().toLowerCase(), smartProduct.getTotalCost());
+            System.out.printf("\nPrice per %s: $%.2f", smartProduct.getProductName().toLowerCase(), smartProduct.getPricePerUnit());
+            System.out.printf("\nTotal cost for %s: $%.2f\n", smartProduct.getProductName().toLowerCase(), smartProduct.getTotalCost());
         }
         System.out.printf("\nTotal order cost: $%.2f\n", calcTotal(smartProducts));
         System.out.println("###################################");

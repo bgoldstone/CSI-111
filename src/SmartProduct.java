@@ -6,32 +6,32 @@
  */
 
 public class SmartProduct {
-    private int id; //ID Number of the Object
-    private String name; //name of product
+    private int productID; //ID Number of the product
+    private String productName; //name of product
     private int numberOfUnits; //number of units the customer wants to order
-    private double price; //price of one unit of product
+    private double pricePerUnit; //price of one unit of product
     private double totalCost; //total cost of order
 
-    public SmartProduct(int id, String name, int numberOfUnits, double price) {
-        this.id = id;
-        this.name = name;
+    public SmartProduct(int productID, String productName, int numberOfUnits, double pricePerUnit) {
+        this.productID = productID;
+        this.productName = productName;
         this.numberOfUnits = numberOfUnits;
-        this.price = price;
-        totalCost = price * numberOfUnits;
+        this.pricePerUnit = pricePerUnit;
+        totalCost = pricePerUnit * numberOfUnits;
     }
 
     /**
      * @return Gets name of item
      */
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
     /**
-     * @param name Sets name of item
+     * @param productName Sets name of item
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
 
@@ -52,15 +52,15 @@ public class SmartProduct {
     /**
      * @return Gets price of item
      */
-    public double getPrice() {
-        return price;
+    public double getPricePerUnit() {
+        return pricePerUnit;
     }
 
     /**
-     * @param price Sets price of item
+     * @param pricePerUnit Sets price of item
      */
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPricePerUnit(double pricePerUnit) {
+        this.pricePerUnit = pricePerUnit;
     }
 
 
@@ -81,15 +81,15 @@ public class SmartProduct {
     /**
      * @return Gets ID number of the product
      */
-    public int getId() {
-        return id;
+    public int getProductID() {
+        return productID;
     }
 
     /**
-     * @param id Sets ID number of the product
+     * @param productID Sets ID number of the product
      */
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 }

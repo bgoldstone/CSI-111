@@ -6,23 +6,23 @@
  */
 
 public class Product {
-    private String name; //name of product
+    private String productName; //name of product
     private int numberOfUnits; //number of units the customer wants to order
-    private double price; //price of one unit of product
+    private double pricePerUnit; //price of one unit of product
     private double totalCost; //total cost of order
 
     /**
      * @return Gets name of item
      */
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
     /**
-     * @param name Sets name of item
+     * @param productName Sets name of item
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     /**
@@ -42,15 +42,15 @@ public class Product {
     /**
      * @return Gets price of item
      */
-    public double getPrice() {
-        return price;
+    public double getPricePerUnit() {
+        return pricePerUnit;
     }
 
     /**
-     * @param price Sets price of item
+     * @param pricePerUnit Sets price of item
      */
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPricePerUnit(double pricePerUnit) {
+        this.pricePerUnit = pricePerUnit;
     }
 
     /**
