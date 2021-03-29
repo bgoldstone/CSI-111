@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Warehouse {
     private int totalNumberOfGoods;
     private Scanner scan = new Scanner(System.in);
-
+    private int tempGoods;
     public Warehouse(int totalNumberOfGoods) {
         this.totalNumberOfGoods = totalNumberOfGoods;
     }
@@ -28,11 +28,11 @@ public class Warehouse {
      */
     public void addGoods() {
         System.out.print("\nHow many goods would you like to add? ");
-        int goodsToAdd = scan.nextInt();
+        tempGoods = scan.nextInt();
 
         //checks to make sure not negative
-        if (goodsToAdd >= 0) {
-            totalNumberOfGoods += goodsToAdd;
+        if (tempGoods >= 0) {
+            totalNumberOfGoods += tempGoods;
         } else {
             System.out.println("Cannot add negative goods to inventory!\n");
         }
@@ -44,17 +44,17 @@ public class Warehouse {
     public void removeGoods() {
         //if trying to remove more inventory than is in inventory
         System.out.print("\nHow many goods would you like to remove? ");
-        int goodsToRemove = scan.nextInt();
+        tempGoods = scan.nextInt();
 
         //checks to make sure not negative
-        if (goodsToRemove > totalNumberOfGoods) {
+        if (tempGoods > totalNumberOfGoods) {
             System.out.println("\nCannot remove more goods than total number of goods!");
             System.out.printf("There is currently %d goods in inventory\n", totalNumberOfGoods);
-        } else if (goodsToRemove < 0) {
+        } else if (tempGoods < 0) {
             System.out.println("\nCannot remove negative goods from inventory!");
             System.out.printf("There is currently %d goods in inventory\n", totalNumberOfGoods);
         } else {
-            totalNumberOfGoods -= goodsToRemove;
+            totalNumberOfGoods -= tempGoods;
         }
 
     }
