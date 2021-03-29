@@ -10,19 +10,39 @@
 public class LinkedList {
     private Node head, tail;
 
+    /**
+     * Constructor for a LinkedList
+     */
     public LinkedList() {
         head = null;
         tail = null;
     }
-    public void insertBookTitle(String bookTitle){
+
+    /**
+     * Insets a book title at the end of the list
+     *
+     * @param bookTitle Title of the book
+     */
+    public void insertBookTitle(String bookTitle) {
 
     }
 
-    public boolean isBookTitle(String bookTitle){
+    /**
+     * Finds out if book title is in the catalog
+     *
+     * @param bookTitle Title of the book
+     * @return true if book is in the catalog, false if not
+     */
+    public boolean isBookTitle(String bookTitle) {
         return true;
     }
 
-    public void deleteBookTitle(String bookTitle){
+    /**
+     * Deletes book from the catalog
+     *
+     * @param bookTitle Title of the book
+     */
+    public void deleteBookTitle(String bookTitle) {
 
     }
 

@@ -13,9 +13,9 @@ public class Node {
     private Node previousNode;
 
     /**
-     * Node Constructor
+     * Constructor for a Node
      *
-     * @param bookTitle    Title of Book
+     * @param bookTitle    Title of the Book
      * @param previousNode Location of previous node
      * @param nextNode     Location of next node
      */
@@ -26,18 +26,18 @@ public class Node {
     }
 
     /**
-     * Gets book title of the node
+     * Gets the book title of the node
      *
-     * @return Title of Book
+     * @return Title of the book
      */
     public String getBookTitle() {
         return bookTitle;
     }
 
     /**
-     * Sets book Title of the node
+     * Sets the book title of the node
      *
-     * @param bookTitle Title of Book
+     * @param bookTitle Title of the book
      */
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;

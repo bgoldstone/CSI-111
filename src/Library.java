@@ -1,5 +1,13 @@
 import java.util.Scanner;
+/*
+ * Name: Benjamin Goldstone (bgoldstone@muhlenberg.edu)
+ * Date: 04/01/2021
+ * Instructor: Professor Helsing
+ */
 
+/**
+ * Uses a LinkedList to setup a Library Catalog
+ */
 public class Library {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
