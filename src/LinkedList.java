@@ -27,7 +27,7 @@ public class LinkedList {
         Node current; //index variable
         if (!isBookTitle(bookTitle)) {
             if (head == null) {
-                Node nextNode = new Node(bookTitle, null, tail);
+                head = new Node(bookTitle, null, tail);
             } else {
                 current = head;
 
@@ -36,6 +36,7 @@ public class LinkedList {
                 }
                 Node nextNode = new Node(bookTitle, current, tail);
                 current.setNextNode(nextNode);
+                tail = nextNode;
             }
         }
     }
@@ -50,7 +51,7 @@ public class LinkedList {
         Node current = head;
         while (current.getNextNode() != null) {
             current = current.getNextNode();
-            if (current.getBookTitle() == bookTitle)
+            if (current.getBookTitle().equals(bookTitle))
                 return true;
         }
         return false;
@@ -65,7 +66,7 @@ public class LinkedList {
         Node current = head;
         while (current.getNextNode() != null) {
             current = current.getNextNode();
-            if (current.getBookTitle() == bookTitle) {
+            if (current.getBookTitle().equals(bookTitle)) {
                 current.getPreviousNode().setPreviousNode(current.getNextNode());
                 current.getNextNode().setNextNode(current.getPreviousNode());
             }
