@@ -24,7 +24,20 @@ public class LinkedList {
      * @param bookTitle Title of the book
      */
     public void insertBookTitle(String bookTitle) {
+        Node current; //index variable
+        if (!isBookTitle(bookTitle)) {
+            if (head == null) {
+                Node nextNode = new Node(bookTitle, null, tail);
+            } else {
+                current = head;
 
+                while (current.getNextNode() != null) {
+                    current = current.getNextNode();
+                }
+                Node nextNode = new Node(bookTitle, current, tail);
+                current.setNextNode(nextNode);
+            }
+        }
     }
 
     /**
@@ -34,7 +47,13 @@ public class LinkedList {
      * @return true if book is in the catalog, false if not
      */
     public boolean isBookTitle(String bookTitle) {
-        return true;
+        Node current = head;
+        while (current.getNextNode() != null) {
+            current = current.getNextNode();
+            if (current.getBookTitle() == bookTitle)
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -43,6 +62,14 @@ public class LinkedList {
      * @param bookTitle Title of the book
      */
     public void deleteBookTitle(String bookTitle) {
+        Node current = head;
+        while (current.getNextNode() != null) {
+            current = current.getNextNode();
+            if (current.getBookTitle() == bookTitle) {
+                current.getPreviousNode().setPreviousNode(current.getNextNode());
+                current.getNextNode().setNextNode(current.getPreviousNode());
+            }
+        }
 
     }
 
