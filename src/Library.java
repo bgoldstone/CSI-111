@@ -32,8 +32,12 @@ public class Library {
             //Takes action given the choice
             switch (choice) {
                 case 'A':
+
+                    //Prompts user for book title to add
                     System.out.print("What is the title of the book you wish to add? ");
                     bookTitle = scan.nextLine();
+
+                    //Checks if book title is already in linked list
                     if (!myLibrary.isBookTitle(bookTitle)) {
                         myLibrary.insertBookTitle(bookTitle);
                         System.out.printf("\nBook title %s added!\n", bookTitle);
@@ -42,8 +46,12 @@ public class Library {
                     }
                     break;
                 case 'S':
+
+                    //Prompts user for book title to search for
                     System.out.print("What is the title of the book you want to search for? ");
                     bookTitle = scan.nextLine();
+
+                    //Checks if book title is in linked list
                     if (myLibrary.isBookTitle(bookTitle)) {
                         System.out.printf("\nBook, %s, is in the library catalog!\n", bookTitle);
                     } else {
@@ -51,20 +59,27 @@ public class Library {
                     }
                     break;
                 case 'R':
+
+                    //Prompts user for book title to remove
                     System.out.print("What is the title of the book you want to remove? ");
                     bookTitle = scan.nextLine();
+
+                    //Attempts to delete book title
                     if (myLibrary.deleteBookTitle(bookTitle)) {
                         System.out.printf("\nBook %s has been removed!\n", bookTitle);
+                        //if no book title matches
                     } else {
                         System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
                     break;
                 case 'L':
+                    //Lists all book titles in linked list
                     myLibrary.getBookList();
                     break;
                 case 'Q':
                     break;
                 default:
+                    //If no other selection is selected
                     System.out.println("Invalid Option!");
                     break;
             }

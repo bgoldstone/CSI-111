@@ -12,17 +12,21 @@ public class Node {
     private Node nextNode;
     private Node previousNode;
 
+    /*
     /**
      * Constructor for a head Node
      *
      * @param bookTitle    Title of the Book
      * @param previousNode Location of previous node
      */
-    //needed for head
+
+    /*
     public Node(String bookTitle, Node previousNode) {
         this.bookTitle = bookTitle;
         this.previousNode = previousNode;
     }
+    */
+
     /**
      * another Constructor for a Node
      *
@@ -35,6 +39,7 @@ public class Node {
         this.previousNode = previousNode;
         this.nextNode = nextNode;
     }
+
 
     /**
      * Gets the book title of the node

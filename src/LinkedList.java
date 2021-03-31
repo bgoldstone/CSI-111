@@ -5,17 +5,16 @@
  */
 
 /**
- * Creates a new LinkedList object
+ * A Doubly Linked List object
  */
 public class LinkedList {
-    private Node head, tail;
+    private Node head;
 
     /**
      * Constructor for a LinkedList
      */
     public LinkedList() {
         head = null;
-        tail = null;
     }
 
     /**
@@ -26,15 +25,14 @@ public class LinkedList {
     public void insertBookTitle(String bookTitle) {
         Node current; //index variable
         if (head == null) {
-            head = new Node(bookTitle, null);
+            head = new Node(bookTitle, null,null);
         } else {
             current = head;
             while (current.getNextNode() != null) {
                 current = current.getNextNode();
             }
-            Node nextNode = new Node(bookTitle, current);
+            Node nextNode = new Node(bookTitle, current,null);
             current.setNextNode(nextNode);
-            tail = nextNode;
         }
     }
 
@@ -49,14 +47,14 @@ public class LinkedList {
         Node current = head;
         while (!current.getBookTitle().equalsIgnoreCase(bookTitle)) {
             if (current.getBookTitle().equalsIgnoreCase(bookTitle)) return true;
-            if(current.getNextNode() == null) return false;
+            if (current.getNextNode() == null) return false;
             current = current.getNextNode();
         }
         return true;
     }
 
     /**
-     * Deletes book from the catalog
+     * Attempts to deletes book title from the catalog
      *
      * @param bookTitle Title of the book
      */
@@ -68,10 +66,10 @@ public class LinkedList {
         }
         Node current = head;
         while (!current.getBookTitle().equalsIgnoreCase(bookTitle)) {
-            if(current.getNextNode() == null) return false;
+            if (current.getNextNode() == null) return false;
             current = current.getNextNode();
             if (current == null) return false;
-            }
+        }
         if (current.getBookTitle().equalsIgnoreCase(bookTitle)) {
             current.getPreviousNode().setNextNode(current.getNextNode());
             current.getNextNode().setPreviousNode(current.getPreviousNode());
@@ -80,6 +78,9 @@ public class LinkedList {
         return false;
     }
 
+    /**
+     * Gets list of all of the book titles in the linked list
+     */
     public void getBookList() {
         Node current = head;
         if (current == null) {
