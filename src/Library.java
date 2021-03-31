@@ -12,7 +12,7 @@ public class Library {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         LinkedList myLibrary = new LinkedList();
-        char choice =' ';
+        char choice = ' ';
         String bookTitle;
 
 
@@ -34,33 +34,33 @@ public class Library {
                 case 'A':
                     System.out.print("What is the title of the book you wish to add? ");
                     bookTitle = scan.nextLine();
-                    if(myLibrary.isBookTitle(bookTitle)){
+                    if (!myLibrary.isBookTitle(bookTitle)) {
                         myLibrary.insertBookTitle(bookTitle);
                         System.out.printf("\nBook title %s added!\n", bookTitle);
-                    } else{
+                    } else {
                         System.out.printf("\nBook %s already in the catalog!\n", bookTitle);
                     }
                     break;
                 case 'S':
                     System.out.print("What is the title of the book you want to search for? ");
                     bookTitle = scan.nextLine();
-                    if(myLibrary.isBookTitle(bookTitle)){
-                        System.out.printf("\nBook %s, is already in the library catalog!\n", bookTitle);
-                    }else{
-                        System.out.printf("\nBook %s, is not in the library catalog!\n" , bookTitle);
+                    if (myLibrary.isBookTitle(bookTitle)) {
+                        System.out.printf("\nBook, %s, is in the library catalog!\n", bookTitle);
+                    } else {
+                        System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
                     break;
                 case 'R':
                     System.out.print("What is the title of the book you want to remove? ");
                     bookTitle = scan.nextLine();
-                    if(myLibrary.isBookTitle(bookTitle)){
-                        myLibrary.deleteBookTitle(bookTitle);
+                    if (myLibrary.deleteBookTitle(bookTitle)) {
                         System.out.printf("\nBook %s has been removed!\n", bookTitle);
-                    }else{
-                        System.out.printf("\nBook %s, is not in the library catalog!\n" , bookTitle);
+                    } else {
+                        System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
                     break;
                 case 'L':
+                    myLibrary.getBookList();
                     break;
                 case 'Q':
                     break;

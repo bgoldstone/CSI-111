@@ -25,19 +25,16 @@ public class LinkedList {
      */
     public void insertBookTitle(String bookTitle) {
         Node current; //index variable
-        if (!isBookTitle(bookTitle)) {
-            if (head == null) {
-                head = new Node(bookTitle, null, tail);
-            } else {
-                current = head;
-
-                while (current.getNextNode() != null) {
-                    current = current.getNextNode();
-                }
-                Node nextNode = new Node(bookTitle, current, tail);
-                current.setNextNode(nextNode);
-                tail = nextNode;
+        if (head == null) {
+            head = new Node(bookTitle, null);
+        } else {
+            current = head;
+            while (current.getNextNode() != null) {
+                current = current.getNextNode();
             }
+            Node nextNode = new Node(bookTitle, current);
+            current.setNextNode(nextNode);
+            tail = nextNode;
         }
     }
 
@@ -48,13 +45,14 @@ public class LinkedList {
      * @return true if book is in the catalog, false if not
      */
     public boolean isBookTitle(String bookTitle) {
+        if (head == null) return false;
         Node current = head;
-        while (current.getNextNode() != null) {
+        while (!current.getBookTitle().equalsIgnoreCase(bookTitle)) {
+            if (current.getBookTitle().equalsIgnoreCase(bookTitle)) return true;
+            if(current.getNextNode() == null) return false;
             current = current.getNextNode();
-            if (current.getBookTitle().equals(bookTitle))
-                return true;
         }
-        return false;
+        return true;
     }
 
     /**
@@ -62,16 +60,38 @@ public class LinkedList {
      *
      * @param bookTitle Title of the book
      */
-    public void deleteBookTitle(String bookTitle) {
-        Node current = head;
-        while (current.getNextNode() != null) {
-            current = current.getNextNode();
-            if (current.getBookTitle().equals(bookTitle)) {
-                current.getPreviousNode().setPreviousNode(current.getNextNode());
-                current.getNextNode().setNextNode(current.getPreviousNode());
-            }
+    public boolean deleteBookTitle(String bookTitle) {
+        if (head == null) return false;
+        if (head.getBookTitle().equalsIgnoreCase(bookTitle)) {
+            head = head.getNextNode();
+            return true;
         }
-
+        Node current = head;
+        while (!current.getBookTitle().equalsIgnoreCase(bookTitle)) {
+            if(current.getNextNode() == null) return false;
+            current = current.getNextNode();
+            if (current == null) return false;
+            }
+        if (current.getBookTitle().equalsIgnoreCase(bookTitle)) {
+            current.getPreviousNode().setNextNode(current.getNextNode());
+            current.getNextNode().setPreviousNode(current.getPreviousNode());
+            return true;
+        }
+        return false;
     }
 
+    public void getBookList() {
+        Node current = head;
+        if (current == null) {
+            System.out.println("\nNo Books in Library!");
+            return;
+        }
+        System.out.println("\n*****Book List*****");
+        while (current.getBookTitle() != null) {
+            System.out.println(current.getBookTitle());
+            if (current.getNextNode() == null) break;
+            current = current.getNextNode();
+        }
+        System.out.println();
+    }
 }

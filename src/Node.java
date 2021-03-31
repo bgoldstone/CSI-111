@@ -13,7 +13,18 @@ public class Node {
     private Node previousNode;
 
     /**
-     * Constructor for a Node
+     * Constructor for a head Node
+     *
+     * @param bookTitle    Title of the Book
+     * @param previousNode Location of previous node
+     */
+    //needed for head
+    public Node(String bookTitle, Node previousNode) {
+        this.bookTitle = bookTitle;
+        this.previousNode = previousNode;
+    }
+    /**
+     * another Constructor for a Node
      *
      * @param bookTitle    Title of the Book
      * @param previousNode Location of previous node
