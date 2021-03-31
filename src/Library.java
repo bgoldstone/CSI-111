@@ -80,7 +80,7 @@ public class Library {
                     break;
                 default:
                     //If no other selection is selected
-                    System.out.println("Invalid Option!");
+                    System.out.println("\nInvalid Option!");
                     break;
             }
             System.out.println();
