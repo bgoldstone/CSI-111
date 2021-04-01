@@ -28,10 +28,12 @@ public class Library {
             System.out.println("(L)ist all book titles");
             System.out.println("(Q)uit Library catalog");
             System.out.print("Please enter A, S, R, L, or Q: ");
+            //Takes users Input
             choice = scan.nextLine().toUpperCase().charAt(0);
 
             //Takes action given the choice
             switch (choice) {
+                //Adding a book
                 case 'A':
 
                     //Prompts user for book title to add
@@ -46,6 +48,7 @@ public class Library {
                         System.out.printf("\nBook %s already in the catalog!\n", bookTitle);
                     }
                     break;
+                //Searching for a book
                 case 'S':
 
                     //Prompts user for book title to search for
@@ -59,6 +62,7 @@ public class Library {
                         System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
                     break;
+                //Removing a book
                 case 'R':
 
                     //Prompts user for book title to remove
@@ -68,15 +72,17 @@ public class Library {
                     //Attempts to delete book title
                     if (myLibrary.deleteBookTitle(bookTitle)) {
                         System.out.printf("\nBook %s has been removed!\n", bookTitle);
-                    //if no book title matches
+                        //if no book title matches
                     } else {
                         System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
                     break;
+                //Listing all the books
                 case 'L':
                     //Lists all book titles in linked list
                     myLibrary.getBookList();
                     break;
+                //if quit, break and then the "while" condition will not be met.
                 case 'Q':
                     break;
                 default:

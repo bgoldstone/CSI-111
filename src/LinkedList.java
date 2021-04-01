@@ -8,13 +8,16 @@
  * A Doubly Linked List object
  */
 public class LinkedList {
+    //Head holds the list so we know where it starts
     private Node head;
+    private Node tail;
 
     /**
      * Constructor for a LinkedList
      */
     public LinkedList() {
-        head = null;
+        head = null; //sets head to null.
+        tail = null;
     }
 
     /**
@@ -32,6 +35,7 @@ public class LinkedList {
                 current = current.getNextNode();
             }
             Node nextNode = new Node(bookTitle, current, null);
+            tail = nextNode;
             current.setNextNode(nextNode);
         }
     }
@@ -110,6 +114,6 @@ public class LinkedList {
             if (current.getNextNode() == null) break;
             current = current.getNextNode();
         }
-        System.out.println();
+        System.out.println("*******************");
     }
 }
