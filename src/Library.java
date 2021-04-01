@@ -10,12 +10,13 @@ import java.util.Scanner;
  */
 public class Library {
     public static void main(String[] args) {
+        //Initializes Scanner Objects
         Scanner scan = new Scanner(System.in);
         LinkedList myLibrary = new LinkedList();
         char choice = ' ';
         String bookTitle;
 
-
+        //Welcome Message
         System.out.println("Welcome to the Library!\n");
         while (choice != 'Q') {
 
@@ -67,7 +68,7 @@ public class Library {
                     //Attempts to delete book title
                     if (myLibrary.deleteBookTitle(bookTitle)) {
                         System.out.printf("\nBook %s has been removed!\n", bookTitle);
-                        //if no book title matches
+                    //if no book title matches
                     } else {
                         System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
                     }
