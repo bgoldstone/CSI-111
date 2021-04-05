@@ -17,7 +17,7 @@ public class Poem {
         String poemAuthor;
         Scanner scan = new Scanner(System.in);
         Scanner fileReader;
-        ArrayList<String> linesOfPoem = new ArrayList<String>();
+        ArrayList<String> linesOfPoem = new ArrayList<>();
         System.out.print("What is the name of the File you would like to use? ");
         File file = new File(scan.nextLine());
         fileReader = new Scanner(file);
@@ -27,5 +27,12 @@ public class Poem {
             linesOfPoem.add(fileReader.nextLine());
         }
         fileReader.close();
+        PrintWriter writer = new PrintWriter("Output.txt");
+        writer.println("Title: " + poemTitle);
+        writer.println("Author: " + poemAuthor);
+        for (String line: linesOfPoem){
+            writer.println(line);
+        }
+        writer.close();
     }
 }
