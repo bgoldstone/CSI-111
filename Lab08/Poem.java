@@ -6,8 +6,26 @@
     Instructor: Professor Joseph Helsing
     Description:
  */
-public class Poem {
-    public static void main(String[] args) {
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Poem {
+    public static void main(String[] args) throws IOException {
+        String poemTitle;
+        String poemAuthor;
+        Scanner scan = new Scanner(System.in);
+        Scanner fileReader;
+        ArrayList<String> linesOfPoem = new ArrayList<String>();
+        System.out.print("What is the name of the File you would like to use? ");
+        File file = new File(scan.nextLine());
+        fileReader = new Scanner(file);
+        poemTitle = fileReader.nextLine();
+        poemAuthor = fileReader.nextLine();
+        while (fileReader.hasNextLine()) {
+            linesOfPoem.add(fileReader.nextLine());
+        }
+        fileReader.close();
     }
 }
