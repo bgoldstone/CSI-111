@@ -18,6 +18,7 @@ public class LLibrary {
     static int bookNumber;
     static Book tempBook;
     static Scanner scan = new Scanner(System.in);
+    static File fileName;
 
     public static void main(String[] args) throws IOException {
         //Initializes Scanner Objects
@@ -195,7 +196,12 @@ public class LLibrary {
 
     public static void load(LinkedList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to load? ");
-        Scanner fileReader = new Scanner(new File(scan.nextLine()));
+        fileName = new File(scan.nextLine());
+        while(!fileName.exists()){
+            System.out.print("\nSorry, Invalid File!\nWhat is the name of the file you want to load? ");
+            fileName = new File(scan.nextLine());
+        }
+        Scanner fileReader = new Scanner(fileName);
         String[] input;
         isBookTitle = false;
         while (fileReader.hasNextLine()) {
@@ -221,7 +227,11 @@ public class LLibrary {
 
     public static void save(LinkedList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to save? ");
-        PrintWriter writer = new PrintWriter(scan.nextLine());
+        if(fileName == null){
+            System.out.println("You must load a file before writing to one!!");
+            return;
+        }
+        PrintWriter writer = new PrintWriter(fileName);
         for (Book book : myLibrary) {
             writer.printf("%s:%d\n", book.getBookTitle(), book.getNumberOfBooks());
         }
