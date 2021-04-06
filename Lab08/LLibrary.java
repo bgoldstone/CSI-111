@@ -16,11 +16,12 @@ public class LLibrary {
     static boolean isBookTitle;
     static String bookTitle;
     static int bookNumber;
+    static Book tempBook;
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
         //Initializes Scanner Objects
-        LinkedList myLibrary = new LinkedList();
+        LinkedList<Book> myLibrary = new LinkedList<>();
         char choice = ' ';
 
         //Welcome Message
@@ -90,16 +91,13 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList object
      */
-    public static void add(LinkedList myLibrary) {
+    public static void add(LinkedList<Book> myLibrary) {
         //Prompts user for book title to add
-        Book tempBook = null;
         System.out.print("What is the title of the book you wish to add? ");
-        bookTitle = scan.nextLine();
-        System.out.printf("\nWhat is the number of %s you wish to add? ", bookTitle);
         bookTitle = scan.nextLine();
         isBookTitle = false;
         for (Book book : myLibrary) {
-            if (book.getBookTitle().equals(bookTitle)) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitle)) {
                 isBookTitle = true;
                 tempBook = book;
                 break;
@@ -107,11 +105,25 @@ public class LLibrary {
         }
         //Checks if book title is already in linked list
         if (isBookTitle) {
-            myLibrary.add(bookTitle + ":1");
-            System.out.printf("\nBook title %s added!\n", bookTitle);
+            System.out.printf("How many %s would you like to add? ", bookTitle);
+            bookNumber = scan.nextInt();
+            scan.nextLine();
+            if (bookNumber < 0) {
+                System.out.println("Invalid Number!!");
+                return;
+            }
+            tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() + bookNumber);
         } else {
-            tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() + 1);
+            System.out.printf("How many %s would you like to add? ", bookTitle);
+            bookNumber = scan.nextInt();
+            scan.nextLine();
+            if (bookNumber < 0) {
+                System.out.println("Invalid Number!!");
+                return;
+            }
+            myLibrary.add(new Book(bookTitle, bookNumber));
         }
+        System.out.println();
     }
 
     /**
@@ -119,13 +131,13 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList object
      */
-    public static void search(LinkedList myLibrary) {
+    public static void search(LinkedList<Book> myLibrary) {
         //Prompts user for book title to search for
         System.out.print("What is the title of the book you want to search for? ");
         bookTitle = scan.nextLine();
         isBookTitle = false;
-        for (Object book : myLibrary) {
-            if (book.equals(bookTitle)) {
+        for (Book book : myLibrary) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitle)) {
                 isBookTitle = true;
                 break;
             }
@@ -138,42 +150,81 @@ public class LLibrary {
         }
     }
 
-    public static void delete(LinkedList myLibrary) {
+    public static void delete(LinkedList<Book> myLibrary) {
         //prompts user for book title
         System.out.print("What is the title of the book you want to remove? ");
         bookTitle = scan.nextLine();
-
+        for (Book book : myLibrary) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitle)) {
+                isBookTitle = true;
+                tempBook = book;
+                break;
+            }
+        }
         //Attempts to delete book title
-        if (myLibrary.remove(bookTitle)) {
-            System.out.printf("\nBook %s has been removed!\n", bookTitle);
-            //if no book title matches
+        if (isBookTitle) {
+            if (tempBook.getNumberOfBooks() == 1) {
+                if (myLibrary.remove(tempBook)) {
+                    System.out.printf("\nBook %s has been removed!\n", bookTitle);
+                    //if no book title matches
+                } else {
+                    System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
+                }
+            } else if (tempBook.getNumberOfBooks() > 1) {
+                System.out.printf("\nHow many %s would you like to remove: ", bookTitle);
+                bookNumber = scan.nextInt();
+                scan.nextLine();
+                if (bookNumber < 0) {
+                    System.out.println("Invalid Number!!");
+                    return;
+                }
+                tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() - bookNumber);
+                System.out.printf("\nBook %s has been removed!\n", bookTitle);
+            }
         } else {
-            System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
+            System.out.printf("\nBook, %s, is not in the library catalog!\n", bookTitle);
         }
     }
 
-    public static void outputAll(LinkedList myLibrary) {
+    public static void outputAll(LinkedList<Book> myLibrary) {
         System.out.println("\n*****Book List*****");
-        for (Object book : myLibrary) {
-            System.out.println(book);
+        for (Book book : myLibrary) {
+            System.out.printf("%s: %d copies\n", book.getBookTitle(), book.getNumberOfBooks());
         }
     }
 
-    public static void load(LinkedList myLibrary) throws IOException {
+    public static void load(LinkedList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to load? ");
-        Scanner fileReader = new Scanner(scan.nextLine());
+        Scanner fileReader = new Scanner(new File(scan.nextLine()));
+        String[] input;
+        isBookTitle = false;
         while (fileReader.hasNextLine()) {
-            myLibrary.add(scan.nextLine());
+            input = fileReader.nextLine().split(":");
+            bookTitle = input[0];
+            bookNumber = Integer.parseInt(input[1]);
+            for (Book book : myLibrary) {
+                if (book.getBookTitle().equalsIgnoreCase(bookTitle)) {
+                    isBookTitle = true;
+                    tempBook = book;
+                    break;
+                }
+            }
+            if (isBookTitle) {
+                tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() + bookNumber);
+            } else {
+                myLibrary.add(new Book(bookTitle, bookNumber));
+            }
         }
         fileReader.close();
         System.out.println();
     }
 
-    public static void save(LinkedList myLibrary) throws IOException {
+    public static void save(LinkedList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to save? ");
         PrintWriter writer = new PrintWriter(scan.nextLine());
-        for (Object book : myLibrary) {
-            writer.println(book);
+        for (Book book : myLibrary) {
+            writer.printf("%s:%d\n", book.getBookTitle(), book.getNumberOfBooks());
         }
+        writer.close();
     }
 }
