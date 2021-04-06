@@ -1,17 +1,19 @@
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.LinkedList;
-import java.io.*;
 /*
     Name: Benjamin Goldstone (bgoldstone@muhlenberg.edu)
     Date: 4/9/2021
     Instructor: Professor Joseph Helsing
-    Description: Stores a book collection, plus a count in a LinkedList
+    Description: Stores a book collection, plus a count in an ArrayList
  */
 
 /**
  * Uses a LinkedList to setup a Library Catalog
  */
-public class LLibrary {
+public class ALibrary {
     //Global Variables
     static boolean isBookTitle;
     static String bookTitle;
@@ -22,7 +24,7 @@ public class LLibrary {
 
     public static void main(String[] args) throws IOException {
         //Initializes Scanner Objects
-        LinkedList<Book> myLibrary = new LinkedList<>();
+        ArrayList<Book> myLibrary = new ArrayList<>();
         char choice = ' ';
 
         //Welcome Message
@@ -92,7 +94,7 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList object
      */
-    public static void add(LinkedList<Book> myLibrary) {
+    public static void add(ArrayList<Book> myLibrary) {
         //Prompts user for book title to add
         System.out.print("What is the title of the book you wish to add? ");
         bookTitle = scan.nextLine();
@@ -138,7 +140,7 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList object
      */
-    public static void search(LinkedList<Book> myLibrary) {
+    public static void search(ArrayList<Book> myLibrary) {
         //Prompts user for book title to search for
         System.out.print("What is the title of the book you want to search for? ");
         bookTitle = scan.nextLine();
@@ -160,13 +162,11 @@ public class LLibrary {
             System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
         }
     }
-
     /**
      * Removes a number of books or book object from the LinkedList
-     *
      * @param myLibrary a LinkedList
      */
-    public static void delete(LinkedList<Book> myLibrary) {
+    public static void delete(ArrayList<Book> myLibrary) {
         //prompts user for book title
         System.out.print("What is the title of the book you want to remove? ");
         bookTitle = scan.nextLine();
@@ -218,7 +218,7 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList
      */
-    public static void outputAll(LinkedList<Book> myLibrary) {
+    public static void outputAll(ArrayList<Book> myLibrary) {
         if (myLibrary.isEmpty()) {
             System.out.println("There are no books found");
             return;
@@ -234,7 +234,7 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList
      */
-    public static void load(LinkedList<Book> myLibrary) throws IOException {
+    public static void load(ArrayList<Book> myLibrary) throws IOException {
         //Asks for file name
         System.out.print("What is the name of the file you want to load? ");
         fileName = new File(scan.nextLine());
@@ -284,7 +284,7 @@ public class LLibrary {
      *
      * @param myLibrary a LinkedList
      */
-    public static void save(LinkedList<Book> myLibrary) throws IOException {
+    public static void save(ArrayList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to save? ");
 
         //Checks if file has been loaded
