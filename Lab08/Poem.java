@@ -1,16 +1,17 @@
-/**
- * @author Benjamin Goldstone (bgoldstone@muhlenberg.edu)
- * @version 4/9/2021
- */
-/*
-    Instructor: Professor Joseph Helsing
-    Description:
- */
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+/*
+    Name: Benjamin Goldstone (bgoldstone@muhlenberg.edu)
+    Date: 4/9/2021
+    Instructor: Professor Joseph Helsing
+    Description:
+ */
 
+/**
+ * Takes in a poem text file, counts number of lines, and puts title and author into a readable format
+ */
 public class Poem {
     public static void main(String[] args) throws IOException {
         //Initializes Variables
