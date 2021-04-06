@@ -15,9 +15,10 @@ public class LLibrary {
     //Global Variables
     static boolean isBookTitle;
     static String bookTitle;
+    static int bookNumber;
     static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         //Initializes Scanner Objects
         LinkedList myLibrary = new LinkedList();
         char choice = ' ';
@@ -91,12 +92,16 @@ public class LLibrary {
      */
     public static void add(LinkedList myLibrary) {
         //Prompts user for book title to add
+        Book tempBook = null;
         System.out.print("What is the title of the book you wish to add? ");
         bookTitle = scan.nextLine();
+        System.out.printf("\nWhat is the number of %s you wish to add? ", bookTitle);
+        bookTitle = scan.nextLine();
         isBookTitle = false;
-        for (Object element : myLibrary) {
-            if (element.equals(bookTitle)) {
+        for (Book book : myLibrary) {
+            if (book.getBookTitle().equals(bookTitle)) {
                 isBookTitle = true;
+                tempBook = book;
                 break;
             }
         }
@@ -105,7 +110,7 @@ public class LLibrary {
             myLibrary.add(bookTitle + ":1");
             System.out.printf("\nBook title %s added!\n", bookTitle);
         } else {
-            isBookTitle = myLibrary.get(myLibrary.indexOf(isBookTitle)).toString()
+            tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() + 1);
         }
     }
 
@@ -149,7 +154,7 @@ public class LLibrary {
 
     public static void outputAll(LinkedList myLibrary) {
         System.out.println("\n*****Book List*****");
-        for(Object book: myLibrary){
+        for (Object book : myLibrary) {
             System.out.println(book);
         }
     }
@@ -157,7 +162,7 @@ public class LLibrary {
     public static void load(LinkedList myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to load? ");
         Scanner fileReader = new Scanner(scan.nextLine());
-        while(fileReader.hasNextLine()){
+        while (fileReader.hasNextLine()) {
             myLibrary.add(scan.nextLine());
         }
         fileReader.close();
@@ -167,7 +172,7 @@ public class LLibrary {
     public static void save(LinkedList myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to save? ");
         PrintWriter writer = new PrintWriter(scan.nextLine());
-        for(Object book : myLibrary){
+        for (Object book : myLibrary) {
             writer.println(book);
         }
     }
