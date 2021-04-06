@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 
 /**
- * Uses a LinkedList to setup a Library Catalog
+ * Uses a ArrayList to setup a Library Catalog
  */
 public class ALibrary {
     //Global Variables
@@ -66,7 +66,7 @@ public class ALibrary {
 
                 //Listing all the books
                 case 'O':
-                    //Lists all book titles in linked list
+                    //Lists all book titles in an ArrayList
                     outputAll(myLibrary);
                     break;
 
@@ -92,7 +92,7 @@ public class ALibrary {
     /**
      * Prompts for an item, checks if item is in list, and adds an item to the library
      *
-     * @param myLibrary a LinkedList object
+     * @param myLibrary a ArrayList object
      */
     public static void add(ArrayList<Book> myLibrary) {
         //Prompts user for book title to add
@@ -107,7 +107,7 @@ public class ALibrary {
                 break;
             }
         }
-        //if already is in LinkedList, add a number of books
+        //if already is in ArrayList, add a number of books
         if (isBookTitle) {
             System.out.printf("How many %s would you like to add? ", bookTitle);
             bookNumber = scan.nextInt();
@@ -118,7 +118,7 @@ public class ALibrary {
                 return;
             }
             tempBook.setNumberOfBooks(tempBook.getNumberOfBooks() + bookNumber);
-            //Adds new book to LinkedList
+            //Adds new book to ArrayList
         } else {
             System.out.printf("How many %s would you like to add? ", bookTitle);
             bookNumber = scan.nextInt();
@@ -136,9 +136,9 @@ public class ALibrary {
     }
 
     /**
-     * Searches if item is in LinkedList
+     * Searches if item is in ArrayList
      *
-     * @param myLibrary a LinkedList object
+     * @param myLibrary a ArrayList object
      */
     public static void search(ArrayList<Book> myLibrary) {
         //Prompts user for book title to search for
@@ -163,8 +163,8 @@ public class ALibrary {
         }
     }
     /**
-     * Removes a number of books or book object from the LinkedList
-     * @param myLibrary a LinkedList
+     * Removes a number of books or book object from the ArrayList
+     * @param myLibrary a ArrayList
      */
     public static void delete(ArrayList<Book> myLibrary) {
         //prompts user for book title
@@ -214,9 +214,9 @@ public class ALibrary {
     }
 
     /**
-     * Prints all the books in the LinkedList
+     * Prints all the books in the ArrayList
      *
-     * @param myLibrary a LinkedList
+     * @param myLibrary a ArrayList
      */
     public static void outputAll(ArrayList<Book> myLibrary) {
         if (myLibrary.isEmpty()) {
@@ -232,7 +232,7 @@ public class ALibrary {
     /**
      * Imports the books from a text file.
      *
-     * @param myLibrary a LinkedList
+     * @param myLibrary a ArrayList
      */
     public static void load(ArrayList<Book> myLibrary) throws IOException {
         //Asks for file name
@@ -251,7 +251,7 @@ public class ALibrary {
         String[] input;
         isBookTitle = false;
 
-        //Iterates through whole file and assigns to LinkedList
+        //Iterates through whole file and assigns to ArrayList
         while (fileReader.hasNextLine()) {
             input = fileReader.nextLine().split(":");
             bookTitle = input[0];
@@ -282,7 +282,7 @@ public class ALibrary {
     /**
      * Saves all the books to a file.
      *
-     * @param myLibrary a LinkedList
+     * @param myLibrary a ArrayList
      */
     public static void save(ArrayList<Book> myLibrary) throws IOException {
         System.out.print("What is the name of the file you want to save? ");

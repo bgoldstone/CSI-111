@@ -64,7 +64,7 @@ public class LLibrary {
 
                 //Listing all the books
                 case 'O':
-                    //Lists all book titles in linked list
+                    //Lists all book titles in a LinkedList
                     outputAll(myLibrary);
                     break;
 
