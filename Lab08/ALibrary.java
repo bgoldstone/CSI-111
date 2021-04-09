@@ -37,9 +37,9 @@ public class ALibrary {
             System.out.println("(S)earch for a book");
             System.out.println("(R)emove a book");
             System.out.println("(O)utput all book titles");
-            System.out.println("(Q)uit Library catalog");
             System.out.println("(L)oad an existing file");
             System.out.println("(W)rite/Save a library to a file");
+            System.out.println("(Q)uit Library catalog");
             System.out.print("Please enter A, S, R, O, L, W, or Q: ");
             //Takes users Input
             choice = scan.nextLine().toUpperCase().charAt(0);
@@ -162,14 +162,17 @@ public class ALibrary {
             System.out.printf("\nBook %s, is not in the library catalog!\n", bookTitle);
         }
     }
+
     /**
      * Removes a number of books or book object from the ArrayList
+     *
      * @param myLibrary a ArrayList
      */
     public static void delete(ArrayList<Book> myLibrary) {
         //prompts user for book title
         System.out.print("What is the title of the book you want to remove? ");
         bookTitle = scan.nextLine();
+        isBookTitle = false;
 
         //Checks if book is in list
         for (Book book : myLibrary) {
@@ -285,8 +288,6 @@ public class ALibrary {
      * @param myLibrary a ArrayList
      */
     public static void save(ArrayList<Book> myLibrary) throws IOException {
-        System.out.print("What is the name of the file you want to save? ");
-
         //Checks if file has been loaded
         if (fileName == null) {
             System.out.println("You must load a file before writing to one!!");

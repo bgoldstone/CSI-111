@@ -35,9 +35,9 @@ public class LLibrary {
             System.out.println("(S)earch for a book");
             System.out.println("(R)emove a book");
             System.out.println("(O)utput all book titles");
-            System.out.println("(Q)uit Library catalog");
             System.out.println("(L)oad an existing file");
             System.out.println("(W)rite/Save a library to a file");
+            System.out.println("(Q)uit Library catalog");
             System.out.print("Please enter A, S, R, O, L, W, or Q: ");
             //Takes users Input
             choice = scan.nextLine().toUpperCase().charAt(0);
@@ -285,8 +285,6 @@ public class LLibrary {
      * @param myLibrary a LinkedList
      */
     public static void save(LinkedList<Book> myLibrary) throws IOException {
-        System.out.print("What is the name of the file you want to save? ");
-
         //Checks if file has been loaded
         if (fileName == null) {
             System.out.println("You must load a file before writing to one!!");
