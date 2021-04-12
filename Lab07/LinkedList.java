@@ -81,6 +81,11 @@ public class LinkedList {
             head.setPreviousNode(null);
             return true;
         }
+        if(tail.getBookTitle().equalsIgnoreCase(bookTitle)){
+            tail = tail.getPreviousNode();
+            tail.setNextNode(null);
+            return true;
+        }
         Node current = head;
         //cycles through list until book title is found
         while (!current.getBookTitle().equalsIgnoreCase(bookTitle)) {
