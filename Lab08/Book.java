@@ -2,8 +2,8 @@ public class Book {
     private String bookTitle;
     private int numberOfBooks;
     public Book(String bookTitle, int numberOfBooks){
-        this.setBookTitle(bookTitle);
-        this.setNumberOfBooks(numberOfBooks);
+        this.bookTitle = bookTitle;
+        this.numberOfBooks = numberOfBooks;
     }
 
     public String getBookTitle() {
