@@ -29,6 +29,7 @@ public class LinkedList {
         Node current; //index variable
         if (head == null) {
             head = new Node(bookTitle, null, null);
+            tail = head;
         } else {
             current = head;
             while (current.getNextNode() != null) {
@@ -77,6 +78,7 @@ public class LinkedList {
             and the linked list to garbage collection
              */
             head = head.getNextNode();
+            head.setPreviousNode(null);
             return true;
         }
         Node current = head;
