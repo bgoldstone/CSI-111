@@ -25,7 +25,6 @@ public class TypeChecker {
         //If is integer, tell user.
         if (tryInt(line)) {
             System.out.printf("The value %d is integer data\n", integerValue);
-
         //If is double, tell user.
         } else if (tryDouble(line)) {
             System.out.printf("The value %f is double data\n", doubleValue);
