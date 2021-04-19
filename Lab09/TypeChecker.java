@@ -22,6 +22,7 @@ public class TypeChecker {
         String line = scan.nextLine();
         System.out.println();
         scan.close();
+        
         //If is integer, tell user.
         if (tryInt(line)) {
             System.out.printf("The value %d is integer data\n", integerValue);
