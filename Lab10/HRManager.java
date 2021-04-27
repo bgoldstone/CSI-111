@@ -68,7 +68,7 @@ public class HRManager {
         //Lists all employees.
         listEmployees(employees);
 
-        //Prints total pay to all employees
+        //Prints total pay for all employees
         System.out.printf("%s%sTotal pay: %,.2f", calcTotalPay(employees));
     }
 
