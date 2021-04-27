@@ -1,25 +1,38 @@
 import java.util.Scanner;
 
+/**
+ * Manages Employees
+ */
 public class HRManager {
     public static void main(String[] args) {
+        //Variable and Object declaration/initialization.
         Scanner scan = new Scanner(System.in);
-        System.out.print("How many employees are there? ");
-        Employee[] employees = new Employee[scan.nextInt()];
-        scan.nextLine();
         String choice;
         String name;
         int id;
         int levelShift;
         double payRate;
+
+        //Prompts users for how many employees are there.
+        System.out.print("How many employees are there? ");
+        //New Array of Employees
+        Employee[] employees = new Employee[scan.nextInt()];
+        scan.nextLine();
+
+        //Initializes Employees based on type.
         for (int i = 0; i < employees.length; i++) {
             System.out.print("What type of user would you like? (Supervisor/Worker) ");
             choice = scan.nextLine();
             System.out.println();
+
+            //If invalid type, keep prompting user until correct input is given.
             while (!(choice.equalsIgnoreCase("Supervisor")) && !(choice.equalsIgnoreCase("Worker"))) {
                 System.out.print("Invalid user!\nWhat type of user would you like? (Supervisor/Worker) ");
                 choice = scan.nextLine();
                 System.out.println();
             }
+
+            //If supervisor, get supervisor information.
             if (choice.equalsIgnoreCase("Supervisor")) {
                 System.out.print("What is the employee's name? ");
                 name = scan.nextLine();
@@ -33,7 +46,10 @@ public class HRManager {
                 levelShift = scan.nextInt();
                 scan.nextLine();
                 employees[i] = new Supervisor(name, id, levelShift, payRate);
-            } else if (choice.equalsIgnoreCase("Worker")) {
+            }
+
+            //If Worker, get worker information.
+            if (choice.equalsIgnoreCase("Worker")) {
                 System.out.print("What is the employee's name? ");
                 name = scan.nextLine();
                 System.out.printf("%sWhat is %s's ID number? ", name);
@@ -49,10 +65,19 @@ public class HRManager {
             }
             System.out.println();
         }
+        //Lists all employees.
         listEmployees(employees);
+
+        //Prints total pay to all employees
         System.out.printf("%s%sTotal pay: %,.2f", calcTotalPay(employees));
     }
 
+    /**
+     * Calculates total pay
+     *
+     * @param employees array of Employees
+     * @return double total pay for all employees
+     */
     private static double calcTotalPay(Employee[] employees) {
         double total = 0;
         for (Employee employee : employees) {
@@ -61,12 +86,18 @@ public class HRManager {
         return total;
     }
 
+    /**
+     * Lists all employees.
+     *
+     * @param employees array of Employees
+     */
     private static void listEmployees(Employee[] employees) {
         BasicWorker worker;
         Supervisor supervisor;
         String shift = "";
         for (Employee employee : employees) {
             System.out.println("\n");
+            //If worker, cast to worker and print information.
             if (employee instanceof BasicWorker) {
                 worker = (BasicWorker) employee;
                 System.out.printf("Name: %s", worker.getEmployeeName());
@@ -81,6 +112,7 @@ public class HRManager {
                 System.out.printf("%sShift: %s", shift);
 
             }
+            //If supervisor, cast to worker and print information.
             if (employee instanceof Supervisor) {
                 supervisor = (Supervisor) employee;
                 System.out.printf("Name: %s", supervisor.getEmployeeName());
