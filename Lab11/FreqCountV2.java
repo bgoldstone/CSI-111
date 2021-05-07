@@ -19,16 +19,19 @@ public class FreqCountV2 {
         HashSet<String> wordCounts = new HashSet();
         HashMap<String, Integer> stopWordsList = new HashMap();
         try {
+            //Reads stop words file and text file
             readStopWordsFile(wordCounts);
             readTextFile(stopWordsList, wordCounts);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        //outputs frequencies
         outputFreq(stopWordsList);
     }
 
     /**
      * Reads in stop words file into hash set of strings.
+     *
      * @param stopWordsList Hash set of type string
      * @throws FileNotFoundException Scanner exception
      */
@@ -37,6 +40,8 @@ public class FreqCountV2 {
         System.out.print("What is the name of the word list file? ");
         file = new File(scan.nextLine());
         System.out.println();
+
+        //if incorrect file name
         while (!file.exists()) {
             System.out.print("Incorrect Name!\n What is the name of the word list file? ");
             file = new File(scan.nextLine());
@@ -45,7 +50,7 @@ public class FreqCountV2 {
         fileReader = new Scanner(file);
 
         //appends all elements to hash set.
-        while(fileReader.hasNext()){
+        while (fileReader.hasNext()) {
             stopWordsList.add(fileReader.next());
         }
     }
@@ -65,6 +70,8 @@ public class FreqCountV2 {
         System.out.print("What is the name of the file to read? ");
         file = new File(scan.nextLine());
         System.out.println();
+
+        //if incorrect file name
         while (!file.exists()) {
             System.out.print("Incorrect Name!\n What is the name of the file to read? ");
             file = new File(scan.nextLine());
@@ -76,7 +83,7 @@ public class FreqCountV2 {
         while (fileReader.hasNext()) {
             word = fileReader.next().toLowerCase();
             //if not hash set, continue.
-            if(!stopWordsList.contains(word)) {
+            if (!stopWordsList.contains(word)) {
                 //If already exists, add one.
                 if (wordCount.containsKey(word)) {
                     wordCount.put(word, wordCount.get(word) + 1);
@@ -97,7 +104,7 @@ public class FreqCountV2 {
     private static void outputFreq(HashMap<String, Integer> wordCounts) {
         //For each key output it.
         for (Object key : wordCounts.keySet()) {
-            System.out.printf("%-20s :%d%n", key, wordCounts.get(key));
+            System.out.printf("%-14s:%d%n", key, wordCounts.get(key));
         }
     }
 }

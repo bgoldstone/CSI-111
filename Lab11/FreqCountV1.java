@@ -11,12 +11,15 @@ import java.util.Scanner;
  */
 public class FreqCountV1 {
     public static void main(String[] args) {
+        //Initializes Hashmap
         HashMap<String, Integer> map = new HashMap();
         try {
+            //Reads Text File
             readTextFile(map);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        //outputs frequencies
         outputFreq(map);
     }
 
@@ -37,6 +40,8 @@ public class FreqCountV1 {
         System.out.print("What is the name of the file? ");
         file = new File(scan.nextLine());
         System.out.println();
+
+        //if incorrect file name
         while (!file.exists()) {
             System.out.print("Incorrect Name!\n What is the name of the file? ");
             file = new File(scan.nextLine());
@@ -66,7 +71,7 @@ public class FreqCountV1 {
     private static void outputFreq(HashMap<String, Integer> map) {
         //For each key output it.
         for (Object key : map.keySet()) {
-            System.out.printf("%-20s :%d%n", key, map.get(key));
+            System.out.printf("%-15s :%d%n", key, map.get(key));
         }
     }
 }
